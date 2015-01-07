@@ -1,4 +1,5 @@
 ﻿using MovieSimulator.Common.BoardGame.Access;
+using MovieSimulator.Common.BoardGame.Command;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,13 +21,18 @@ namespace MovieSimulator.Common.BoardGame.Area
 
         public Brush Color { get; set; }
 
-        //public String background { get; set; }
+        public CommandAbstract graphicCommand { get; set; }
 
         public AreaAbstract()
         {
-            Color = Brushes.Red;
+            graphicCommand = new CommandUpdateArea();
             access = new List<AccessAbstract>();
             isAccessible = true;
+        }
+
+        public void UpdateGraphic()
+        {
+            graphicCommand.UpdateAreaBoardGame(this);
         }
 
         public void addAccess(AccessAbstract access)

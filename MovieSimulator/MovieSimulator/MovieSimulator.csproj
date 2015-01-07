@@ -66,10 +66,19 @@
     <Compile Include="Common\BoardGame\Area\AreaAbstract.cs" />
     <Compile Include="Common\BoardGame\BoardGameAbstract.cs" />
     <Compile Include="Common\BoardGame\Area\Square.cs" />
+    <Compile Include="Common\BoardGame\Characters\Character.cs" />
+    <Compile Include="Common\BoardGame\Command\CommandAbstract.cs" />
+    <Compile Include="Common\BoardGame\Command\CommandUpdateCharacter.cs" />
+    <Compile Include="Common\BoardGame\Command\CommandUpdateArea.cs" />
     <Compile Include="Common\BoardGame\Factory\FactoryBoardGameAbstract.cs" />
     <Compile Include="Common\GameSimulator.cs" />
     <Compile Include="Common\GamingEnvironment.cs" />
+    <Compile Include="HungerGames\Area\Grass.cs" />
+    <Compile Include="HungerGames\Area\Rock.cs" />
+    <Compile Include="HungerGames\Area\Wall.cs" />
+    <Compile Include="HungerGames\Area\Water.cs" />
     <Compile Include="HungerGames\BoardGameHungerGames.cs" />
+    <Compile Include="HungerGames\Characters\Katniss.cs" />
     <Compile Include="HungerGames\FactoryBoardGameHungerGames.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -104,7 +113,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="HungerGames\Characters\" />
     <Folder Include="PrisonBreak\Characters\" />
     <Folder Include="StarWars\" />
   </ItemGroup>

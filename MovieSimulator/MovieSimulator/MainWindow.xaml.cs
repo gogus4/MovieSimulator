@@ -1,20 +1,11 @@
 ﻿using MovieSimulator.Common;
-using MovieSimulator.Common.BoardGame;
 using MovieSimulator.Common.BoardGame.Area;
+using MovieSimulator.Common.BoardGame.Characters;
 using MovieSimulator.HungerGames;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MovieSimulator.HungerGames.Characters;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MovieSimulator
@@ -33,39 +24,53 @@ namespace MovieSimulator
             }
         }
 
+        public Character perso { get; set; }
+        public Character perso1 { get; set; }
+
+
         public MainWindow()
         {
             InitializeComponent();
 
+            perso = new Katniss();
+            perso1 = new Katniss(15,8);
+
             GamingEnvironment.Instance.CreateBoardGame(new FactoryBoardGameHungerGames(), 20);
 
-            Grid.ShowGridLines = true;
             for (int i = 0; i < GamingEnvironment.Instance.boardGame.size; i++)
             {
                 Grid.ColumnDefinitions.Add(new ColumnDefinition());
                 Grid.RowDefinitions.Add(new RowDefinition());
             }
 
-            Refresh();
+            FillBoardGame();
 
-            AreaAbstract area = new Square();
-            area.Color = Brushes.Black;
-            area.x = 0;
-            area.y = 0;
+            _instance = this;
         }
 
-        public void Update(AreaAbstract area)
+        public void UpdateArea(AreaAbstract area)
         {
-            Rectangle ai = new Rectangle();
-            ai.AllowDrop = true;
-            ai.Fill = area.Color;
-            Grid.SetRow(ai, area.x);
-            Grid.SetColumn(ai, area.y);
+            for (int i = 0; i < Grid.Children.Count; i++)
+            {
+                Rectangle e = Grid.Children[i] as Rectangle;
 
-            Grid.Children.Add(ai);
+                if (Grid.GetRow(e) == area.x && Grid.GetColumn(e) == area.y)
+                    e.Fill = area.Color;
+            }
         }
 
-        public void Refresh()
+        public void UpdateCharacter(Character character)
+        {
+            for (int i = 0; i < Grid.Children.Count; i++)
+            {
+                Rectangle e = Grid.Children[i] as Rectangle;
+
+                if (Grid.GetRow(e) == character.x && Grid.GetColumn(e) == character.y)
+                     e.Fill = Brushes.Gold;
+            }
+        }
+
+        public void FillBoardGame()
         {
             for (int i = 0; i < GamingEnvironment.Instance.boardGame.areas.Count; i++)
             {
@@ -77,6 +82,18 @@ namespace MovieSimulator
 
                 Grid.Children.Add(ai);
             }
+        }
+
+        private void UpdateSquare_Click(object sender, RoutedEventArgs e)
+        {
+            GamingEnvironment.Instance.boardGame.areas[0].Color = Brushes.Black;
+            GamingEnvironment.Instance.boardGame.areas[0].UpdateGraphic();
+        }
+
+        private void UpdatePersonnage_Click(object sender, RoutedEventArgs e)
+        {
+            perso.Move();
+            perso1.Move();
         }
     }
 }

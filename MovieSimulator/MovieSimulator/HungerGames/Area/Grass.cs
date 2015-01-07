@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
-namespace MovieSimulator.Common.BoardGame.Access
+namespace MovieSimulator.HungerGames.Area
 {
-    public class AccessAdjacent : AccessAbstract
+    public class Grass : AreaAbstract
     {
-        public AccessAdjacent(AreaAbstract areaEnd)
-            : base(areaEnd)
+        public Grass()
         {
-
+            Color = Brushes.Green;
         }
     }
 }

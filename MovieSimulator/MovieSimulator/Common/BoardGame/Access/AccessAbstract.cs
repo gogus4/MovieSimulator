@@ -9,14 +9,12 @@ namespace MovieSimulator.Common.BoardGame.Access
 {
     public abstract class AccessAbstract
     {
-        public AreaAbstract areaStart { get; set; }
         public AreaAbstract areaEnd { get; set; }
 
         public Boolean bidirectional { get; set; }
 
-        public AccessAbstract(AreaAbstract areaStart, AreaAbstract areaEnd)
+        public AccessAbstract(AreaAbstract areaEnd)
         {
-            this.areaStart = areaStart;
             this.areaEnd = areaEnd;
         }
     }

@@ -26,7 +26,7 @@ namespace MovieSimulator.Common
 
         public GamingEnvironment()
         {
-
+            _instance = this;
         }
 
         public void CreateBoardGame(FactoryBoardGameAbstract factory,int size)
