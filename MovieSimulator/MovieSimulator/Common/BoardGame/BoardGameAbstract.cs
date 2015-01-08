@@ -45,5 +45,7 @@ namespace MovieSimulator.Common.BoardGame
         {
             this.characters.Add(character);
         }
+
+        public abstract void Next();
     }
 }

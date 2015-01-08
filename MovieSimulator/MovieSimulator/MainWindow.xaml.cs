@@ -8,12 +8,14 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 using MovieSimulator.HungerGames.Area;
 using System.Collections.Generic;
+using MovieSimulator.Common.Statements;
 
-namespace MovieSimulator
+namespace MovieSimulator // MOVE TO GAME_SIMULATOR
 {
     public partial class MainWindow : Window
     {
         private static MainWindow _instance;
+
         public static MainWindow Instance
         {
             get
@@ -25,21 +27,35 @@ namespace MovieSimulator
             }
         }
 
+        private StatementGame _statementGame;
+        public StatementGame statementGame
+        {
+            get
+            {
+                return _statementGame;
+            }
+            set 
+            {
+                _statementGame = value;
+                if (_statementGame.GetType() == typeof(StatementGameFinish))
+                {
+                    _statementGame.Execute();
+                }
+            }
+        
+        }
+
         public MainWindow()
         {
             InitializeComponent();
 
             GamingEnvironment.Instance.CreateBoardGame(new FactoryBoardGameHungerGames(), 20);
 
-            for (int i = 0; i < GamingEnvironment.Instance.boardGame.size; i++)
-            {
-                Grid.ColumnDefinitions.Add(new ColumnDefinition());
-                Grid.RowDefinitions.Add(new RowDefinition());
-            }
-
-            FillBoardGame();
-
             _instance = this;
+
+            statementGame = new StatementGameInit();
+            statementGame.Execute();
+
         }
 
         public void UpdateArea(AreaAbstract area)
@@ -86,16 +102,7 @@ namespace MovieSimulator
 
         private void UpdatePersonnage_Click(object sender, RoutedEventArgs e)
         {
-            List<Character> toKeep = new List<Character>();
-            foreach (Character character in GamingEnvironment.Instance.boardGame.characters)
-            {
-                if (character.hp > 0)
-                {
-                    character.Action();
-                    toKeep.Add(character);
-                }
-            }
-            GamingEnvironment.Instance.boardGame.characters = toKeep;
+            statementGame.Execute();
         }
     }
 }

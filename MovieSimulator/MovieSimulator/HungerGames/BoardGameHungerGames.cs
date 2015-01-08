@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MovieSimulator.HungerGames.Characters;
+using MovieSimulator.Common.BoardGame.Characters;
+using MovieSimulator.Common;
 
 namespace MovieSimulator.HungerGames
 {
@@ -28,9 +30,23 @@ namespace MovieSimulator.HungerGames
             this.characters.Add(new Katniss(14, 8));
             this.characters.Add(new Peeta(19, 8));
             /*this.characters.Add(new Katniss(10, 8));
-            this.characters.Add(new Katniss(8, 18));
+            this.characters.Add(new Peeta(8, 18));
             this.characters.Add(new Katniss(8,11));
-            this.characters.Add(new Katniss(15,5));*/
+            this.characters.Add(new Peeta(15,5));*/
+        }
+
+        public override void Next()
+        {
+            List<Character> toKeep = new List<Character>();
+            foreach (Character character in characters)
+            {
+                if (character.hp > 0)
+                {
+                    character.Action();
+                    toKeep.Add(character);
+                }
+            }
+            characters = toKeep;
         }
     }
 }
