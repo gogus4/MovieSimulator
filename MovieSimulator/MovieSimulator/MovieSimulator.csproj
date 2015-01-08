@@ -81,6 +81,8 @@
     <Compile Include="HungerGames\BoardGameHungerGames.cs" />
     <Compile Include="HungerGames\Characters\Katniss.cs" />
     <Compile Include="HungerGames\FactoryBoardGameHungerGames.cs" />
+    <Compile Include="HungerGames\Strategy\StrategyFightWithArm.cs" />
+    <Compile Include="HungerGames\Strategy\StrategyFightWithBow.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

@@ -2,7 +2,6 @@
 using MovieSimulator.Common.BoardGame.Area;
 using MovieSimulator.Common.BoardGame.Characters;
 using MovieSimulator.HungerGames;
-using MovieSimulator.HungerGames.Characters;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;

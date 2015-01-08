@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MovieSimulator.Common.BoardGame.Access;
 
 namespace MovieSimulator.HungerGames.Characters
 {
@@ -21,35 +22,59 @@ namespace MovieSimulator.HungerGames.Characters
         public Katniss()
         {
             command = new CommandUpdateCharacter();
-            // Random x et y
         }
 
         public override void Move()
         {
             var area = GamingEnvironment.Instance.boardGame.areas.Where(x => x.x == this.x && x.y == this.y).FirstOrDefault();
 
-            // Faire un test pour voir si un personnage ne se trouve pas sur mm case
             if (area != null)
             {
                 if (area.access.Count > 0)
                 {
-                    Random rnd = new Random();
-                    int nb = rnd.Next(0, area.access.Count);
+                    List<AccessAbstract> listAccessPossible = new List<AccessAbstract>();
 
-                    this.x = area.access[nb].areaEnd.x;
-                    this.y = area.access[nb].areaEnd.y;
+                    foreach (AccessAbstract access in area.access)
+                    {
+                        var characterInCase = GamingEnvironment.Instance.boardGame.characters.Where(x => x.x == access.areaEnd.x && x.y == access.areaEnd.y).FirstOrDefault();
 
-                    area.UpdateGraphic();
-                    command.UpdateCharacterBoardGame(this);
+                        if (characterInCase == null)
+                            listAccessPossible.Add(access);
+
+                        else
+                            Console.WriteLine("Personnage dans la même case !");
+                    }
+
+                    if (listAccessPossible.Count > 0)
+                    {
+                        Random rnd = new Random();
+                        int nb = rnd.Next(0, listAccessPossible.Count);
+
+                        Console.WriteLine(string.Format("Personnage[{0},{1}] se déplace en [{2},{3}]", x, y, listAccessPossible[nb].areaEnd.x, listAccessPossible[nb].areaEnd.y));
+
+                        this.x = listAccessPossible[nb].areaEnd.x;
+                        this.y = listAccessPossible[nb].areaEnd.y;
+
+                        area.UpdateGraphic();
+                        command.UpdateCharacterBoardGame(this);
+
+                    }
                 }
             }
         }
 
         public override bool Watch()
         {
-            throw new NotImplementedException();
-        }
+            //GamingEnvironment.Instance.boardGame.characters.Where(x => x.x <= x)
 
+            /*var areas = boardGameHungerGames.areas.Where(x => (x.x == area.x && x.y == area.y - 1) ||
+                                                                (x.x == area.x && x.y == area.y + 1) ||
+                                                                (x.x == area.x - 1 && x.y == area.y) ||
+                                                                (x.x == area.x + 1 && x.y == area.y));*/
+
+
+        }
+        
         public override void Fight()
         {
             throw new NotImplementedException();

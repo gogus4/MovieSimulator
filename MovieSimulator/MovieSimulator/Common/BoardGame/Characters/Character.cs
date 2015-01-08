@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MovieSimulator.Common.BoardGame.Strategy;
+using MovieSimulator.HungerGames.Strategy;
 
 namespace MovieSimulator.Common.BoardGame.Characters
 {
@@ -19,8 +21,10 @@ namespace MovieSimulator.Common.BoardGame.Characters
 
         public CommandAbstract command { get; set; }
 
+        public StrategyFight strategyFight { get; set; }
 
         public Character(int x, int y)
+            : this()
         {
             this.x = x;
             this.y = y;
@@ -28,7 +32,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
 
         public Character()
         {
-
+            strategyFight = new StrategyFightWithArm();
         }
 
         public abstract void Move();
