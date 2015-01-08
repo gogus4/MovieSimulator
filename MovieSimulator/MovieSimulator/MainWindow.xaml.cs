@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using MovieSimulator.HungerGames.Area;
+using System.Collections.Generic;
 
 namespace MovieSimulator
 {
@@ -85,10 +86,16 @@ namespace MovieSimulator
 
         private void UpdatePersonnage_Click(object sender, RoutedEventArgs e)
         {
+            List<Character> toKeep = new List<Character>();
             foreach (Character character in GamingEnvironment.Instance.boardGame.characters)
             {
-                character.Move();
+                if (character.hp > 0)
+                {
+                    character.Action();
+                    toKeep.Add(character);
+                }
             }
+            GamingEnvironment.Instance.boardGame.characters = toKeep;
         }
     }
 }

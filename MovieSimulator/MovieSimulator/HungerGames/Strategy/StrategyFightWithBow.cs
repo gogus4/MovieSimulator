@@ -11,7 +11,7 @@ namespace MovieSimulator.HungerGames.Strategy
     {
         public override int Degats()
         {
-            return 25;
+            return 50;
         }
 
         public override int Range()

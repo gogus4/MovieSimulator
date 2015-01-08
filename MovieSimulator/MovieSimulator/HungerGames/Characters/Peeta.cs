@@ -1,26 +1,23 @@
-﻿using MovieSimulator.Common;
-using MovieSimulator.Common.BoardGame.Area;
-using MovieSimulator.Common.BoardGame.Characters;
+﻿using MovieSimulator.Common.BoardGame.Characters;
 using MovieSimulator.Common.BoardGame.Command;
+using MovieSimulator.HungerGames.Strategy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MovieSimulator.Common.BoardGame.Access;
-using MovieSimulator.HungerGames.Strategy;
 
 namespace MovieSimulator.HungerGames.Characters
 {
-    public class Katniss : Character
+    public class Peeta : Character
     {
-        public Katniss(int x, int y)
+        public Peeta(int x, int y)
             : base(x, y)
         {
             Init();
         }
 
-        public Katniss()
+        public Peeta()
         {
             Init();
         }
@@ -28,8 +25,7 @@ namespace MovieSimulator.HungerGames.Characters
         public void Init()
         {
             command = new CommandUpdateCharacter();
-            strategyFight = new StrategyFightWithBow();
+            strategyFight = new StrategyFightWithArm();
         }
-
     }
 }

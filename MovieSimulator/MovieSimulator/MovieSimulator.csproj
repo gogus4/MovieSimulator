@@ -80,6 +80,7 @@
     <Compile Include="HungerGames\Area\Water.cs" />
     <Compile Include="HungerGames\BoardGameHungerGames.cs" />
     <Compile Include="HungerGames\Characters\Katniss.cs" />
+    <Compile Include="HungerGames\Characters\Peeta.cs" />
     <Compile Include="HungerGames\FactoryBoardGameHungerGames.cs" />
     <Compile Include="HungerGames\Strategy\StrategyFightWithArm.cs" />
     <Compile Include="HungerGames\Strategy\StrategyFightWithBow.cs" />
