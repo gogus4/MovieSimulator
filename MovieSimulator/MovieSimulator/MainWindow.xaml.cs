@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using MovieSimulator.HungerGames.Area;
 
 namespace MovieSimulator
 {
@@ -24,16 +25,9 @@ namespace MovieSimulator
             }
         }
 
-        public Character perso { get; set; }
-        public Character perso1 { get; set; }
-
-
         public MainWindow()
         {
             InitializeComponent();
-
-            perso = new Katniss();
-            perso1 = new Katniss(15,8);
 
             GamingEnvironment.Instance.CreateBoardGame(new FactoryBoardGameHungerGames(), 20);
 
@@ -86,14 +80,16 @@ namespace MovieSimulator
 
         private void UpdateSquare_Click(object sender, RoutedEventArgs e)
         {
-            GamingEnvironment.Instance.boardGame.areas[0].Color = Brushes.Black;
-            GamingEnvironment.Instance.boardGame.areas[0].UpdateGraphic();
+            GamingEnvironment.Instance.boardGame.areas[1] = new Wall();
+            GamingEnvironment.Instance.boardGame.areas[1].UpdateGraphic();
         }
 
         private void UpdatePersonnage_Click(object sender, RoutedEventArgs e)
         {
-            perso.Move();
-            perso1.Move();
+            foreach (Character character in GamingEnvironment.Instance.boardGame.characters)
+            {
+                character.Move();
+            }
         }
     }
 }

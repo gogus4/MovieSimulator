@@ -1,20 +1,30 @@
 ﻿<Window x:Class="MovieSimulator.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="900">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.9*"/>
-            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="0.3*"/>
         </Grid.ColumnDefinitions>
         
-        <Grid x:Name="Grid" Grid.Column="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.9*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid x:Name="Grid" Grid.Column="0" Grid.Row="1">
 
         </Grid>
         
-        <StackPanel Orientation="Vertical" Grid.Column="1">
-            <Button x:Name="UpdateSquare" Grid.Column="1" Content="Update" Height="20" VerticalAlignment="Top" Click="UpdateSquare_Click"/>
-            <Button x:Name="UpdatePersonnage" Grid.Column="1" Content="Update personnage" Height="20" VerticalAlignment="Top" Click="UpdatePersonnage_Click" />
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button x:Name="UpdateSquare" Content="Update" Height="20" VerticalAlignment="Top" Click="UpdateSquare_Click"/>
+            <Button x:Name="UpdatePersonnage" Content="Update personnage" Height="20" VerticalAlignment="Top" Click="UpdatePersonnage_Click" />
+        </StackPanel>
+        
+        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+            <TextBlock Text="Scénario :" FontSize="12"/>
+            <RichTextBox />
         </StackPanel>
     </Grid>
 </Window>
