@@ -20,6 +20,9 @@
         <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Button x:Name="UpdateSquare" Content="Update" Height="20" VerticalAlignment="Top" Click="UpdateSquare_Click"/>
             <Button x:Name="UpdatePersonnage" Content="Update personnage" Height="20" VerticalAlignment="Top" Click="UpdatePersonnage_Click" />
+            <TextBlock Text="Envoyer un message à tous le monde"  Margin="10,0,0,0"/>
+            <TextBox x:Name="sendMessage" Width="200" Height="20" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="sendMessageToAllPerson" Height="20" VerticalAlignment="Top" Content="Envoyer" Click="sendMessageToAllPerson_Click"/>
         </StackPanel>
         
         <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">

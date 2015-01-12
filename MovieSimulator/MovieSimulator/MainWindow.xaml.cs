@@ -104,5 +104,10 @@ namespace MovieSimulator // MOVE TO GAME_SIMULATOR
         {
             statementGame.Execute();
         }
+
+        private void sendMessageToAllPerson_Click(object sender, RoutedEventArgs e)
+        {
+            // sendMessage.Text;
+        }
     }
 }
