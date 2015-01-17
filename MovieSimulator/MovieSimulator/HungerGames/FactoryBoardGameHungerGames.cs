@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MovieSimulator.HungerGames.Composite;
 
 namespace MovieSimulator.HungerGames
 {
@@ -31,17 +32,24 @@ namespace MovieSimulator.HungerGames
                     int rd = rnd.Next(0, 10);
 
                     if (rd == 0)
-                        boardGameHungerGames.AddArea(new Rock() { x = i, y = j });
+                        boardGameHungerGames.AddArea(new Rock() { x = i, y = j});
 
                     else if (rd == 1)
-                        boardGameHungerGames.AddArea(new Wall() { x = i, y = j });
-
+                    {
+                        boardGameHungerGames.AddArea(new Wall() { x = i, y = j});
+                    }
 
                     else if (rd == 2 || rd == 3)
-                        boardGameHungerGames.AddArea(new Water() { x = i, y = j });
+                    {
+                        Potion potion = new Potion("Potion de fruit");
+                        potion.Add(new Pomme());
+                        potion.Add(new Poire());
+
+                        boardGameHungerGames.AddArea(new Water() { x = i, y = j, item = potion });
+                    }
 
                     else if (rd > 3 && rd < 6)
-                        boardGameHungerGames.AddArea(new Grass() { x = i, y = j });
+                        boardGameHungerGames.AddArea(new Grass() { x = i, y = j, item = new Pomme() });
 
                     else
                         boardGameHungerGames.AddArea(new Square() { x = i, y = j });

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace MovieSimulator.HungerGames.Composite
 {
-    public class Pomme : CompositeHealAbstract
+    public class Poire : CompositeHealAbstract
     {
-        public Pomme()
+        public Poire()
         {
-            this.name = "Pomme";
+            this.name = "Poire";
         }
 
         public override void Remove(CompositeHealAbstract compositeAbstract)

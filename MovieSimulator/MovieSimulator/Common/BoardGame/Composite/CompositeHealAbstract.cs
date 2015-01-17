@@ -15,5 +15,7 @@ namespace MovieSimulator.Common.BoardGame.Composite
         public abstract void Add(CompositeHealAbstract compositeAbstract);
 
         public abstract int getHealPower();
+
+        public abstract String ToString();
     }
 }

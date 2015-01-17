@@ -53,7 +53,6 @@ namespace MovieSimulator.Common.BoardGame.Characters
 
         public void Move()
         {
-
             var area = GamingEnvironment.Instance.boardGame.areas.Where(x => x.x == this.x && x.y == this.y).FirstOrDefault();
 
             if (area != null)
@@ -82,6 +81,12 @@ namespace MovieSimulator.Common.BoardGame.Characters
 
                         this.x = listAccessPossible[nb].areaEnd.x;
                         this.y = listAccessPossible[nb].areaEnd.y;
+
+                        if (listAccessPossible[nb].areaEnd.item != null)
+                        {
+                            this.hp += listAccessPossible[nb].areaEnd.item.getHealPower();
+                            Console.WriteLine(string.Format("Personnage[{0},{1}] a trouver {2}. Son hp augmente de : {3}", x, y, listAccessPossible[nb].areaEnd.item.ToString(), listAccessPossible[nb].areaEnd.item.getHealPower()));
+                        }
 
                         area.UpdateGraphic();
                         //command.UpdateCharacterBoardGame(this);

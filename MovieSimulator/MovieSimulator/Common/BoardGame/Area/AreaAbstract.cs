@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using MovieSimulator.Common.BoardGame.Composite;
 
 namespace MovieSimulator.Common.BoardGame.Area
 {
@@ -23,11 +24,19 @@ namespace MovieSimulator.Common.BoardGame.Area
 
         public CommandAbstract graphicCommand { get; set; }
 
+        public CompositeHealAbstract item { get; set; }
+
         public AreaAbstract()
         {
             graphicCommand = new CommandUpdateArea();
             access = new List<AccessAbstract>();
+            item = null;
             isAccessible = true;
+        }
+
+        public void SetItem(CompositeHealAbstract composite)
+        {
+            this.item = composite;
         }
 
         public void UpdateGraphic()

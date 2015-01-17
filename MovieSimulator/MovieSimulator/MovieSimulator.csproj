@@ -87,6 +87,7 @@
     <Compile Include="HungerGames\BoardGameHungerGames.cs" />
     <Compile Include="HungerGames\Characters\Katniss.cs" />
     <Compile Include="HungerGames\Characters\Peeta.cs" />
+    <Compile Include="HungerGames\Composite\Poire.cs" />
     <Compile Include="HungerGames\Composite\Pomme.cs" />
     <Compile Include="HungerGames\Composite\Potion.cs" />
     <Compile Include="HungerGames\FactoryBoardGameHungerGames.cs" />
