@@ -9,6 +9,7 @@ using System.Windows.Shapes;
 using MovieSimulator.HungerGames.Area;
 using System.Collections.Generic;
 using MovieSimulator.Common.Statements;
+using MovieSimulator.Common.BoardGame.Observer;
 
 namespace MovieSimulator // MOVE TO GAME_SIMULATOR
 {
@@ -105,9 +106,14 @@ namespace MovieSimulator // MOVE TO GAME_SIMULATOR
             statementGame.Execute();
         }
 
-        private void sendMessageToAllPerson_Click(object sender, RoutedEventArgs e)
+        private void SendMessageToAllPerson_Click(object sender, RoutedEventArgs e)
         {
-            // sendMessage.Text;
+            GamingEnvironment.Instance.boardGame.ChangeObserverMode(EMode.ListenMessage);
+        }
+
+        private void Report_Click(object sender, RoutedEventArgs e)
+        {
+            GamingEnvironment.Instance.boardGame.ChangeObserverMode(EMode.DoMyReport);
         }
     }
 }

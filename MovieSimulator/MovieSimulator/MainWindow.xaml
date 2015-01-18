@@ -7,24 +7,25 @@
             <ColumnDefinition Width="0.7*"/>
             <ColumnDefinition Width="0.3*"/>
         </Grid.ColumnDefinitions>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="0.9*"/>
         </Grid.RowDefinitions>
-        
+
         <Grid x:Name="Grid" Grid.Column="0" Grid.Row="1">
 
         </Grid>
-        
+
         <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Button x:Name="UpdateSquare" Content="Update" Height="20" VerticalAlignment="Top" Click="UpdateSquare_Click"/>
             <Button x:Name="UpdatePersonnage" Content="Update personnage" Height="20" VerticalAlignment="Top" Click="UpdatePersonnage_Click" />
-            <TextBlock Text="Envoyer un message à tous le monde"  Margin="10,0,0,0"/>
-            <TextBox x:Name="sendMessage" Width="200" Height="20" Margin="10,0,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="sendMessageToAllPerson" Height="20" VerticalAlignment="Top" Content="Envoyer" Click="sendMessageToAllPerson_Click"/>
+            <TextBlock Text="Envoyer un message à tous le monde"  Margin="10,0,0,36.8"/>
+            <TextBox x:Name="sendMessageBox" Width="200" Height="20" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="sendMessageToAllPerson" Height="20" VerticalAlignment="Top" Content="Envoyer" Click="SendMessageToAllPerson_Click"/>
+            <Button x:Name="Report" Content="Report" Width="59" Click="Report_Click" Height="20" VerticalAlignment="Top"/>
         </StackPanel>
-        
+
         <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
             <TextBlock Text="Scénario :" FontSize="12"/>
             <RichTextBox />

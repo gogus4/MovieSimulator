@@ -73,6 +73,10 @@
     <Compile Include="Common\BoardGame\Command\CommandUpdateArea.cs" />
     <Compile Include="Common\BoardGame\Composite\CompositeHealAbstract.cs" />
     <Compile Include="Common\BoardGame\Factory\FactoryBoardGameAbstract.cs" />
+    <Compile Include="Common\BoardGame\Observer\EMode.cs" />
+    <Compile Include="Common\BoardGame\Observer\IObserver.cs" />
+    <Compile Include="Common\BoardGame\Observer\ObservedAbstractSubject.cs" />
+    <Compile Include="Common\BoardGame\Observer\Organization.cs" />
     <Compile Include="Common\BoardGame\Strategy\StrategyFight.cs" />
     <Compile Include="Common\GameSimulator.cs" />
     <Compile Include="Common\GamingEnvironment.cs" />
