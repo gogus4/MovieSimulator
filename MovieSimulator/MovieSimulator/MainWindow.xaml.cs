@@ -9,6 +9,8 @@ using System.Windows.Shapes;
 using MovieSimulator.HungerGames.Area;
 using System.Collections.Generic;
 using MovieSimulator.Common.Statements;
+using MovieSimulator.Common.BoardGame.Memento;
+using System.Linq;
 
 namespace MovieSimulator // MOVE TO GAME_SIMULATOR
 {
@@ -34,7 +36,7 @@ namespace MovieSimulator // MOVE TO GAME_SIMULATOR
             {
                 return _statementGame;
             }
-            set 
+            set
             {
                 _statementGame = value;
                 if (_statementGame.GetType() == typeof(StatementGameFinish))
@@ -42,8 +44,10 @@ namespace MovieSimulator // MOVE TO GAME_SIMULATOR
                     _statementGame.Execute();
                 }
             }
-        
         }
+
+        public Caretaker caretaker { get; set; }
+        public Originator originator { get; set; }
 
         public MainWindow()
         {
@@ -56,6 +60,8 @@ namespace MovieSimulator // MOVE TO GAME_SIMULATOR
             statementGame = new StatementGameInit();
             statementGame.Execute();
 
+            caretaker = new Caretaker();
+            originator = new Originator();
         }
 
         public void UpdateArea(AreaAbstract area)
@@ -76,7 +82,7 @@ namespace MovieSimulator // MOVE TO GAME_SIMULATOR
                 Rectangle e = Grid.Children[i] as Rectangle;
 
                 if (Grid.GetRow(e) == character.x && Grid.GetColumn(e) == character.y)
-                     e.Fill = Brushes.Gold;
+                    e.Fill = Brushes.Gold;
             }
         }
 
@@ -108,6 +114,58 @@ namespace MovieSimulator // MOVE TO GAME_SIMULATOR
         private void sendMessageToAllPerson_Click(object sender, RoutedEventArgs e)
         {
             // sendMessage.Text;
+        }
+
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            if (caretaker.Current < caretaker.savedMemento.Count)
+            {
+                originator.RestoreFromMemento(caretaker.GetMemento(caretaker.Current));
+
+                foreach (Character character in GamingEnvironment.Instance.boardGame.characters)
+                {
+                    var area = GamingEnvironment.Instance.boardGame.areas.Where(x => x.x == character.x && x.y == character.y).FirstOrDefault();
+                    area.UpdateGraphic();
+                }
+
+                GamingEnvironment.Instance.boardGame.characters = originator.characters;
+
+                foreach (Character character in GamingEnvironment.Instance.boardGame.characters)
+                    character.command.UpdateCharacterBoardGame(character);
+            }
+
+            else
+            {
+                statementGame.Execute();
+
+                originator.characters = new List<Character>(GamingEnvironment.Instance.boardGame.characters);
+                caretaker.AddMemento(new Memento(GamingEnvironment.Instance.boardGame.characters));
+            }
+
+            caretaker.Current++;
+        }
+
+        private void Previous_Click(object sender, RoutedEventArgs e)
+        {
+            if (caretaker.Current == 0) MessageBox.Show("Erreur impossible d'executer le bouton Précédent");
+
+            else
+            {
+                caretaker.Current--;
+
+                originator.RestoreFromMemento(caretaker.GetMemento(caretaker.Current));
+
+                foreach (Character character in GamingEnvironment.Instance.boardGame.characters)
+                {
+                    var area = GamingEnvironment.Instance.boardGame.areas.Where(x => x.x == character.x && x.y == character.y).FirstOrDefault();
+                    area.UpdateGraphic();
+                }
+
+                GamingEnvironment.Instance.boardGame.characters = originator.characters;
+
+                foreach (Character character in GamingEnvironment.Instance.boardGame.characters)
+                    character.command.UpdateCharacterBoardGame(character);
+            }
         }
     }
 }

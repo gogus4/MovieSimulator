@@ -9,7 +9,6 @@ namespace MovieSimulator.Common.Statements
 {
     public class StatementGameInit : StatementGame
     {
-
         public override void Execute()
         {
             for (int i = 0; i < GamingEnvironment.Instance.boardGame.size; i++)

@@ -10,7 +10,7 @@ using MovieSimulator.Common.BoardGame.Access;
 
 namespace MovieSimulator.Common.BoardGame.Characters
 {
-    public abstract class Character
+    public abstract class Character : ICloneable
     {
         public String name { get; set; }
         public int x { get; set; }
@@ -95,7 +95,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
             }
         }
 
-        public Character Watch(){
+        public Character Watch() {
             var character = GamingEnvironment.Instance.boardGame.characters
                             .Where(x => (x.x != this.x && x.y != this.y))
                             .Where(x =>
@@ -105,13 +105,12 @@ namespace MovieSimulator.Common.BoardGame.Characters
             return character;
         }
             
-        public void Fight(Character toAttack){
+        public void Fight(Character toAttack) {
             Console.WriteLine(String.Format("{0}[{3},{4}] attaque {1}[{5},{6}] : hp restants ==> {2}", this, toAttack, toAttack.hp, this.x, this.y, toAttack.x, toAttack.y));
             toAttack.GetAssaultFrom(this);
         }
 
-        public void GetAssaultFrom(Character fromAttack)
-        {
+        public void GetAssaultFrom(Character fromAttack) {
             hp -= fromAttack.strategyFight.Degats();
             if (hp > 0)
             {
@@ -120,9 +119,19 @@ namespace MovieSimulator.Common.BoardGame.Characters
             else
             {
                 Console.WriteLine(String.Format("{0}[{1},{2}] is dead ...", this, this.x, this.y));
+
+                if (this.strategyFight.Degats() < fromAttack.strategyFight.Degats())
+                    this.strategyFight = fromAttack.strategyFight;
+
                 //GamingEnvironment.Instance.boardGame.characters.Remove(this);
                 GamingEnvironment.Instance.boardGame.areas.Where(x => x.x == this.x && x.y == this.y).FirstOrDefault().UpdateGraphic();
             }
+        }
+
+        public Object Clone()
+        {
+            Character othercopy = (Character)this.MemberwiseClone();
+            return othercopy;
         }
     }
 

@@ -73,6 +73,9 @@
     <Compile Include="Common\BoardGame\Command\CommandUpdateArea.cs" />
     <Compile Include="Common\BoardGame\Composite\CompositeHealAbstract.cs" />
     <Compile Include="Common\BoardGame\Factory\FactoryBoardGameAbstract.cs" />
+    <Compile Include="Common\BoardGame\Memento\Caretaker.cs" />
+    <Compile Include="Common\BoardGame\Memento\Memento.cs" />
+    <Compile Include="Common\BoardGame\Memento\Originator.cs" />
     <Compile Include="Common\BoardGame\Strategy\StrategyFight.cs" />
     <Compile Include="Common\GameSimulator.cs" />
     <Compile Include="Common\GamingEnvironment.cs" />
