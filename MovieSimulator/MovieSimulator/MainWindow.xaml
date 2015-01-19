@@ -26,9 +26,15 @@
             <Button x:Name="Report" Content="Report" Margin="10,0,0,0" Width="59" Click="Report_Click" Height="20" VerticalAlignment="Top"/>
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
-            <TextBlock Text="Scénario :" FontSize="12"/>
-            <RichTextBox />
-        </StackPanel>
+        <Grid Grid.Column="1" Grid.Row="1" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.05*"/>
+                <RowDefinition Height="0.95*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Scénario :" Grid.Row="0" FontSize="12"/>
+
+            <RichTextBox Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+        </Grid>
     </Grid>
 </Window>

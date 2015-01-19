@@ -92,6 +92,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
                         {
                             this.hp += listAccessPossible[nb].areaEnd.item.getHealPower();
                             Console.WriteLine(string.Format("Personnage[{0},{1}] a trouver {2}. Son hp augmente de : {3}", x, y, listAccessPossible[nb].areaEnd.item.ToString(), listAccessPossible[nb].areaEnd.item.getHealPower()));
+                            listAccessPossible[nb].areaEnd.item = null;
                         }
 
                         area.UpdateGraphic();
