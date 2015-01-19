@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 using MovieSimulator.Common.BoardGame.Strategy;
 using MovieSimulator.HungerGames.Strategy;
 using MovieSimulator.Common.BoardGame.Access;
+using MovieSimulator.Common.BoardGame.Observer;
 
 namespace MovieSimulator.Common.BoardGame.Characters
 {
-    public abstract class Character : ICloneable
+    public abstract class Character : ICloneable,IObserver
     {
         public String name { get; set; }
         public int x { get; set; }
@@ -23,6 +24,8 @@ namespace MovieSimulator.Common.BoardGame.Characters
         public CommandAbstract command { get; set; }
 
         public StrategyFight strategyFight { get; set; }
+
+        public EMode boardgameMode { get; set; }
 
         public Character(int x, int y)
             : this()
@@ -132,6 +135,32 @@ namespace MovieSimulator.Common.BoardGame.Characters
         {
             Character othercopy = (Character)this.MemberwiseClone();
             return othercopy;
+        }
+
+        public void Update()
+        {
+            this.boardgameMode = GamingEnvironment.Instance.boardGame.staff.ObserverMode;
+        }
+
+
+        public string ExecuteBoardgameStrategy()
+        {
+            string toReturn = null;
+            switch (this.boardgameMode)
+            {
+                case EMode.ListenMessage:
+                    string message = MainWindow.Instance.sendMessageBox.Text;
+                    toReturn = name + " hear a message ! It says : \"" + message + "\"";
+                    break;
+                case EMode.DoMyReport:
+                    toReturn = "My name is " + name + " and i have " + hp + " health points";
+                    break;
+                default:
+                    toReturn = "No comportement setted or not implemented yet";
+                    break;
+            }
+
+            return toReturn;
         }
     }
 

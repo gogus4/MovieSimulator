@@ -26,13 +26,18 @@ namespace MovieSimulator.HungerGames
         public BoardGameHungerGames(int size)
             : base(size)
         {
-            this.characters.Add(new Katniss());
-            this.characters.Add(new Katniss(14, 8));
-            this.characters.Add(new Peeta(19, 8));
-            this.characters.Add(new Katniss(10, 8));
-            this.characters.Add(new Peeta(8, 18));
-            this.characters.Add(new Katniss(8,11));
-            this.characters.Add(new Peeta(15,5));
+            placeCharacters();
+        }
+
+        private void placeCharacters()
+        {
+            this.AddCharacter(new Katniss());
+            this.AddCharacter(new Katniss(14, 8));
+            this.AddCharacter(new Peeta(19, 8));
+            this.AddCharacter(new Katniss(10, 8));
+            this.AddCharacter(new Peeta(8, 18));
+            this.AddCharacter(new Katniss(8, 11));
+            this.AddCharacter(new Peeta(15, 5));
         }
 
         public override void Next()

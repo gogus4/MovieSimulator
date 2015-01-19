@@ -76,6 +76,10 @@
     <Compile Include="Common\BoardGame\Memento\Caretaker.cs" />
     <Compile Include="Common\BoardGame\Memento\Memento.cs" />
     <Compile Include="Common\BoardGame\Memento\Originator.cs" />
+    <Compile Include="Common\BoardGame\Observer\EMode.cs" />
+    <Compile Include="Common\BoardGame\Observer\IObserver.cs" />
+    <Compile Include="Common\BoardGame\Observer\ObservedAbstractSubject.cs" />
+    <Compile Include="Common\BoardGame\Observer\Organization.cs" />
     <Compile Include="Common\BoardGame\Strategy\StrategyFight.cs" />
     <Compile Include="Common\GameSimulator.cs" />
     <Compile Include="Common\GamingEnvironment.cs" />
