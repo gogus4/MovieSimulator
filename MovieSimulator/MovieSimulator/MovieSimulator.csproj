@@ -68,6 +68,8 @@
     <Compile Include="Common\BoardGame\BoardGameAbstract.cs" />
     <Compile Include="Common\BoardGame\Area\Square.cs" />
     <Compile Include="Common\BoardGame\Characters\Character.cs" />
+    <Compile Include="Common\BoardGame\Characters\Decorator\ComponentDecoratorAbstract.cs" />
+    <Compile Include="Common\BoardGame\Characters\Decorator\DecoratorAbstract.cs" />
     <Compile Include="Common\BoardGame\Command\CommandAbstract.cs" />
     <Compile Include="Common\BoardGame\Command\CommandUpdateCharacter.cs" />
     <Compile Include="Common\BoardGame\Command\CommandUpdateArea.cs" />
@@ -92,6 +94,9 @@
     <Compile Include="HungerGames\Area\Wall.cs" />
     <Compile Include="HungerGames\Area\Water.cs" />
     <Compile Include="HungerGames\BoardGameHungerGames.cs" />
+    <Compile Include="HungerGames\Characters\Decorator\BloodDecorator.cs" />
+    <Compile Include="HungerGames\Characters\Decorator\MudDecorator.cs" />
+    <Compile Include="HungerGames\Characters\Decorator\WaterDecorator.cs" />
     <Compile Include="HungerGames\Characters\Katniss.cs" />
     <Compile Include="HungerGames\Characters\Peeta.cs" />
     <Compile Include="HungerGames\Composite\Poire.cs" />

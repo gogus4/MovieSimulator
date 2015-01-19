@@ -8,10 +8,11 @@ using MovieSimulator.Common.BoardGame.Strategy;
 using MovieSimulator.HungerGames.Strategy;
 using MovieSimulator.Common.BoardGame.Access;
 using MovieSimulator.Common.BoardGame.Observer;
+using MovieSimulator.Common.BoardGame.Characters.Decorator;
 
 namespace MovieSimulator.Common.BoardGame.Characters
 {
-    public abstract class Character : ICloneable,IObserver
+    public abstract class Character : ComponentDecoratorAbstract, ICloneable, IObserver
     {
         public String name { get; set; }
         public int x { get; set; }
@@ -26,6 +27,8 @@ namespace MovieSimulator.Common.BoardGame.Characters
         public StrategyFight strategyFight { get; set; }
 
         public EMode boardgameMode { get; set; }
+
+        public DecoratorAbstract decorator { get; set; }
 
         public Character(int x, int y)
             : this()
@@ -153,7 +156,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
                     toReturn = name + " hear a message ! It says : \"" + message + "\"";
                     break;
                 case EMode.DoMyReport:
-                    toReturn = "My name is " + name + " and i have " + hp + " health points";
+                    toReturn = UseMyDecoratorToDoMyReport();
                     break;
                 default:
                     toReturn = "No comportement setted or not implemented yet";
@@ -161,6 +164,23 @@ namespace MovieSimulator.Common.BoardGame.Characters
             }
 
             return toReturn;
+        }
+
+        public string UseMyDecoratorToDoMyReport()
+        {
+            if (decorator != null)
+            {
+                return decorator.DoMyReport();
+            }
+            else
+            {
+                return DoMyReport();
+            }
+        }
+
+        public override string DoMyReport()
+        {
+            return "My name is " + name + " and i have " + hp + " health points";
         }
     }
 
