@@ -9,6 +9,9 @@ namespace MovieSimulator.HungerGames.Characters.Decorator
 {
     public class GrassDecorator : DecoratorAbstract
     {
-
+        public override string DoMyReport()
+        {
+            return base.DoMyReport() + ", j'ai de l'herbe plein mes chaussures";
+        }
     }
 }

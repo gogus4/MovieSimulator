@@ -10,6 +10,8 @@ using MovieSimulator.Common.BoardGame.Access;
 using MovieSimulator.Common.BoardGame.Observer;
 using MovieSimulator.Common.BoardGame.Characters.Decorator;
 using MovieSimulator.Common.BoardGame.Area;
+using MovieSimulator.HungerGames.Area;
+using MovieSimulator.HungerGames.Characters.Decorator;
 
 namespace MovieSimulator.Common.BoardGame.Characters
 {
@@ -172,7 +174,44 @@ namespace MovieSimulator.Common.BoardGame.Characters
 
         public void AddDecoratorToDoMyReport(AreaAbstract area)
         {
-            // if(type) ==> add 
+            Boolean isAlreadyDecorated = false;
+            Boolean needToAddADecorator = false;
+            DecoratorAbstract dec = decorator;
+            DecoratorAbstract newDecorator = null;
+
+            if (typeof(Grass).Equals(area.GetType())){
+                newDecorator = new GrassDecorator();
+                needToAddADecorator = true;
+            }
+            else if (typeof(Water).Equals(area.GetType()))
+            {
+                newDecorator = new WaterDecorator();
+                needToAddADecorator = true;
+            }
+
+            if (dec != null && needToAddADecorator)
+            {
+                while (dec != null)
+                {
+                    if (dec.GetType().Equals(newDecorator.GetType()))
+                    {
+                        isAlreadyDecorated = true;
+                        break;
+                    }
+                }
+
+                if (!isAlreadyDecorated)
+                {
+                    newDecorator.SetComponent(decorator);
+                    decorator = newDecorator;
+                }
+            }
+            else
+            {
+                decorator = newDecorator;
+            }
+            
+
         }
 
         public string UseMyDecoratorToDoMyReport()
