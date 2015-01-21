@@ -9,6 +9,7 @@ using MovieSimulator.HungerGames.Strategy;
 using MovieSimulator.Common.BoardGame.Access;
 using MovieSimulator.Common.BoardGame.Observer;
 using MovieSimulator.Common.BoardGame.Characters.Decorator;
+using MovieSimulator.Common.BoardGame.Area;
 
 namespace MovieSimulator.Common.BoardGame.Characters
 {
@@ -88,6 +89,8 @@ namespace MovieSimulator.Common.BoardGame.Characters
                         this.x = listAccessPossible[nb].areaEnd.x;
                         this.y = listAccessPossible[nb].areaEnd.y;
 
+                        AddDecoratorToDoMyReport(listAccessPossible[nb].areaEnd);
+
                         if (listAccessPossible[nb].areaEnd.item != null)
                         {
                             this.hp += listAccessPossible[nb].areaEnd.item.getHealPower();
@@ -164,6 +167,11 @@ namespace MovieSimulator.Common.BoardGame.Characters
             }
 
             return toReturn;
+        }
+
+        public void AddDecoratorToDoMyReport(AreaAbstract area)
+        {
+            // if(type) ==> add 
         }
 
         public string UseMyDecoratorToDoMyReport()

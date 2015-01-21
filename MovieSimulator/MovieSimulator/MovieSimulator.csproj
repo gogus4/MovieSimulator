@@ -95,6 +95,7 @@
     <Compile Include="HungerGames\Area\Water.cs" />
     <Compile Include="HungerGames\BoardGameHungerGames.cs" />
     <Compile Include="HungerGames\Characters\Decorator\BloodDecorator.cs" />
+    <Compile Include="HungerGames\Characters\Decorator\GrassDecorator.cs" />
     <Compile Include="HungerGames\Characters\Decorator\MudDecorator.cs" />
     <Compile Include="HungerGames\Characters\Decorator\WaterDecorator.cs" />
     <Compile Include="HungerGames\Characters\Katniss.cs" />

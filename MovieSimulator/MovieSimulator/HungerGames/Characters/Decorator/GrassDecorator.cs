@@ -7,11 +7,8 @@ using MovieSimulator.Common.BoardGame.Characters.Decorator;
 
 namespace MovieSimulator.HungerGames.Characters.Decorator
 {
-    public class WaterDecorator : DecoratorAbstract
+    public class GrassDecorator : DecoratorAbstract
     {
-        public override string DoMyReport()
-        {
-            return base.DoMyReport() + ", je suis trempé";
-        }
+
     }
 }

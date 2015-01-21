@@ -7,7 +7,7 @@ using MovieSimulator.Common.BoardGame.Characters.Decorator;
 
 namespace MovieSimulator.HungerGames.Characters.Decorator
 {
-    class BloodDecorator : DecoratorAbstract
+    public class BloodDecorator : DecoratorAbstract
     {
         public override string DoMyReport()
         {
