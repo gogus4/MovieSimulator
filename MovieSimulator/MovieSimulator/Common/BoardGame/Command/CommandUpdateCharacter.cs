@@ -10,7 +10,6 @@ namespace MovieSimulator.Common.BoardGame.Command
 {
     public class CommandUpdateCharacter : CommandAbstract
     {
-
         public override void UpdateAreaBoardGame(AreaAbstract area)
         {
             throw new NotImplementedException();
@@ -18,7 +17,7 @@ namespace MovieSimulator.Common.BoardGame.Command
 
         public override void UpdateCharacterBoardGame(Character character)
         {
-            MainWindow.Instance.UpdateCharacter(character);
+            GameSimulator.Instance.UpdateCharacter(character);
         }
     }
 }

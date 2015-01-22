@@ -11,7 +11,7 @@ namespace MovieSimulator.Common.BoardGame.Command
     {
         public override void UpdateAreaBoardGame(AreaAbstract area)
         {
-            MainWindow.Instance.UpdateArea(area);
+            GameSimulator.Instance.UpdateArea(area);
         }
 
         public override void UpdateCharacterBoardGame(Characters.Character area)

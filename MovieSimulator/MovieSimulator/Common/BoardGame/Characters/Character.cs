@@ -153,7 +153,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
             switch (this.boardgameMode)
             {
                 case EMode.ListenMessage:
-                    string message = MainWindow.Instance.sendMessageBox.Text;
+                    string message = GameSimulator.Instance.sendMessageBox.Text;
                     toReturn = name + " hear a message ! It says : \"" + message + "\"";
                     break;
                 case EMode.DoMyReport:

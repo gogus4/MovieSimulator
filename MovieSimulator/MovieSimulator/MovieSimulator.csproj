@@ -54,7 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Page Include="GameSimulator.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -83,7 +83,6 @@
     <Compile Include="Common\BoardGame\Observer\ObservedAbstractSubject.cs" />
     <Compile Include="Common\BoardGame\Observer\Organization.cs" />
     <Compile Include="Common\BoardGame\Strategy\StrategyFight.cs" />
-    <Compile Include="Common\GameSimulator.cs" />
     <Compile Include="Common\GamingEnvironment.cs" />
     <Compile Include="Common\Statements\StatementGame.cs" />
     <Compile Include="Common\Statements\StatementGameFinish.cs" />
@@ -105,8 +104,8 @@
     <Compile Include="HungerGames\FactoryBoardGameHungerGames.cs" />
     <Compile Include="HungerGames\Strategy\StrategyFightWithArm.cs" />
     <Compile Include="HungerGames\Strategy\StrategyFightWithBow.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="GameSimulator.xaml.cs">
+      <DependentUpon>GameSimulator.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

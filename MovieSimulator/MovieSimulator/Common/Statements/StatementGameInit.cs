@@ -13,12 +13,12 @@ namespace MovieSimulator.Common.Statements
         {
             for (int i = 0; i < GamingEnvironment.Instance.boardGame.size; i++)
             {
-                MainWindow.Instance.Grid.ColumnDefinitions.Add(new ColumnDefinition());
-                MainWindow.Instance.Grid.RowDefinitions.Add(new RowDefinition());
+                GameSimulator.Instance.Grid.ColumnDefinitions.Add(new ColumnDefinition());
+                GameSimulator.Instance.Grid.RowDefinitions.Add(new RowDefinition());
             }
 
-            MainWindow.Instance.FillBoardGame();
-            MainWindow.Instance.statementGame = new StatementGameRunning();
+            GameSimulator.Instance.FillBoardGame();
+            GameSimulator.Instance.statementGame = new StatementGameRunning();
         }
 
     }
