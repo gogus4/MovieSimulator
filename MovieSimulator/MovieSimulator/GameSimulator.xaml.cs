@@ -54,7 +54,7 @@ namespace MovieSimulator
         {
             InitializeComponent();
 
-            GamingEnvironment.Instance.CreateBoardGame(new FactoryBoardGameHungerGames(), 20);
+            //GamingEnvironment.Instance.CreateBoardGame(new FactoryBoardGameHungerGames(), 20);
 
             _instance = this;
 
