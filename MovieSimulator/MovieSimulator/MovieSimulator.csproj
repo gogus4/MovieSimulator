@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -54,7 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Common\Menu\Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GameSimulator.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -83,12 +88,17 @@
     <Compile Include="Common\BoardGame\Observer\ObservedAbstractSubject.cs" />
     <Compile Include="Common\BoardGame\Observer\Organization.cs" />
     <Compile Include="Common\BoardGame\Strategy\StrategyFight.cs" />
-    <Compile Include="Common\GameSimulator.cs" />
     <Compile Include="Common\GamingEnvironment.cs" />
+    <Compile Include="Common\Menu\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Menu\MenuEntry.cs" />
     <Compile Include="Common\Statements\StatementGame.cs" />
     <Compile Include="Common\Statements\StatementGameFinish.cs" />
     <Compile Include="Common\Statements\StatementGameInit.cs" />
     <Compile Include="Common\Statements\StatementGameRunning.cs" />
+    <Compile Include="Common\Menu\TileMenuClickEventArgs.cs" />
+    <Compile Include="Common\Configuration.cs" />
     <Compile Include="HungerGames\Area\Grass.cs" />
     <Compile Include="HungerGames\Area\Rock.cs" />
     <Compile Include="HungerGames\Area\Wall.cs" />
@@ -106,12 +116,19 @@
     <Compile Include="HungerGames\FactoryBoardGameHungerGames.cs" />
     <Compile Include="HungerGames\Strategy\StrategyFightWithArm.cs" />
     <Compile Include="HungerGames\Strategy\StrategyFightWithBow.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="GameSimulator.xaml.cs">
+      <DependentUpon>GameSimulator.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

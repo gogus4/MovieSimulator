@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MovieSimulator.HungerGames.Composite;
+using System.Xml.Linq;
+using System.Reflection;
 
 namespace MovieSimulator.HungerGames
 {
@@ -17,6 +19,46 @@ namespace MovieSimulator.HungerGames
         public BoardGameHungerGames boardGameHungerGames { get; set; }
 
         public FactoryBoardGameHungerGames()
+        {
+
+        }
+
+        public void LoadBoardGame(string path)
+        {
+            XElement xelement = XElement.Load(path);
+            var areas = from listAreas in xelement.Element("areas").Elements("area")
+                        select listAreas;
+
+            string nameSimulation = path.Split('_')[0];
+
+            foreach (XElement area in areas)
+            {
+                AreaAbstract o = (AreaAbstract)GetInstance(Assembly.GetExecutingAssembly(), nameSimulation, area.Attribute("type").Value);
+                o.x = int.Parse(area.Attribute("x").Value);
+                o.y = int.Parse(area.Attribute("y").Value);
+
+                boardGameHungerGames.AddArea(o);
+            }
+        }
+
+        public static object GetInstance(Assembly a,string simulation, string className)
+        {
+            try
+            {
+                Type type = a.GetType("MovieSimulator." + simulation + ".Area." + className);
+                return Activator.CreateInstance(type); 
+            }
+            catch (ArgumentNullException) { return null; }
+        }
+
+        public void CreateAreas(string path)
+        {
+            // Load File XML if exist
+            
+
+        }
+
+        public void SaveBoardGame()
         {
 
         }
@@ -60,6 +102,8 @@ namespace MovieSimulator.HungerGames
         public override BoardGameAbstract CreateBoardGame(int size)
         {
             boardGameHungerGames = new BoardGameHungerGames(size);
+
+            // LoadBoardGame("HungerGames_21.01.2015.xml");
 
             CreateAreas();
 

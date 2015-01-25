@@ -12,7 +12,7 @@ namespace MovieSimulator.Common.Statements
         {
             GamingEnvironment.Instance.boardGame.Next();
             if(GamingEnvironment.Instance.boardGame.characters.Count == 1){
-                MainWindow.Instance.statementGame = new StatementGameFinish();
+                GameSimulator.Instance.statementGame = new StatementGameFinish();
             }
         }
     }
