@@ -8,9 +8,9 @@ namespace MovieSimulator.Common.BoardGame.Characters.Decorator
 {
     public abstract class DecoratorAbstract : ComponentDecoratorAbstract
     {
-        protected ComponentDecoratorAbstract component;
+        public DecoratorAbstract component;
 
-        public void SetComponent(ComponentDecoratorAbstract imbriquedComponent)
+        public void SetComponent(DecoratorAbstract imbriquedComponent)
         {
             component = imbriquedComponent;
         }

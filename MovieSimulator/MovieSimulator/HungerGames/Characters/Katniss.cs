@@ -29,6 +29,7 @@ namespace MovieSimulator.HungerGames.Characters
         {
             command = new CommandUpdateCharacter();
             strategyFight = new StrategyFightWithBow();
+            name = "Katniss";
         }
 
     }

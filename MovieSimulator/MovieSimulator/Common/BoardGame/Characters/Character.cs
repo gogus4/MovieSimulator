@@ -15,7 +15,7 @@ using MovieSimulator.HungerGames.Characters.Decorator;
 
 namespace MovieSimulator.Common.BoardGame.Characters
 {
-    public abstract class Character : ComponentDecoratorAbstract, ICloneable, IObserver
+    public abstract class Character : DecoratorAbstract, ICloneable, IObserver
     {
         public String name { get; set; }
         public int x { get; set; }
@@ -159,13 +159,13 @@ namespace MovieSimulator.Common.BoardGame.Characters
             {
                 case EMode.ListenMessage:
                     string message = GameSimulator.Instance.sendMessageBox.Text;
-                    toReturn = name + " hear a message ! It says : \"" + message + "\"";
+                    toReturn = name + " entend un message ! Le message dit : \"" + message + "\"";
                     break;
                 case EMode.DoMyReport:
                     toReturn = UseMyDecoratorToDoMyReport();
                     break;
                 default:
-                    toReturn = "No comportement setted or not implemented yet";
+                    toReturn = "Ce comportement n'a pas encore été implémenté";
                     break;
             }
 
@@ -198,6 +198,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
                         isAlreadyDecorated = true;
                         break;
                     }
+                    dec = dec.component;
                 }
 
                 if (!isAlreadyDecorated)
@@ -208,10 +209,12 @@ namespace MovieSimulator.Common.BoardGame.Characters
             }
             else
             {
-                decorator = newDecorator;
-            }
-            
-
+                if (newDecorator != null)
+                {
+                    newDecorator.SetComponent(this);
+                    decorator = newDecorator;
+                }
+            }            
         }
 
         public string UseMyDecoratorToDoMyReport()
@@ -228,7 +231,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
 
         public override string DoMyReport()
         {
-            return "My name is " + name + " and i have " + hp + " health points";
+            return base.DoMyReport() + "Je m'apppelle " + name + " et il me reste " + hp + " points de vie";
         }
     }
 
