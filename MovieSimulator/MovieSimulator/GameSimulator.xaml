@@ -36,6 +36,7 @@
             <TextBox x:Name="sendMessageBox" Width="200" Height="20" Margin="10,0,0,0" VerticalAlignment="Top"/>
             <Button x:Name="sendMessageToAllPerson" Margin="10,0,0,0" Height="20" VerticalAlignment="Top" Content="Envoyer" Click="SendMessageToAllPerson_Click"/>
             <Button x:Name="Report" Content="Report" Margin="10,0,0,0" Width="59" Click="Report_Click" Height="20" VerticalAlignment="Top"/>
+            <Button x:Name="clearConsole" Content="Vider la console" Margin="10,0,0,0" Width="98" Click="ClearConsole_Click" Height="20" VerticalAlignment="Top"/>
         </StackPanel>
 
         <Grid Grid.Column="1" Grid.Row="2" Margin="5">

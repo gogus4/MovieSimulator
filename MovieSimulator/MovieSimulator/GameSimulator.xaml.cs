@@ -177,5 +177,10 @@ namespace MovieSimulator
         {
 
         }
+
+        private void ClearConsole_Click(object sender, RoutedEventArgs e)
+        {
+            actionText.Document.Blocks.Clear();
+        }
     }
 }

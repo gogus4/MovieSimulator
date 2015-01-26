@@ -86,7 +86,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
                         Random rnd = new Random();
                         int nb = rnd.Next(0, listAccessPossible.Count);
 
-                        GameSimulator.Instance.actionText.AppendText(string.Format("Personnage[{0},{1}] se déplace en [{2},{3}]", x, y, listAccessPossible[nb].areaEnd.x, listAccessPossible[nb].areaEnd.y));
+                        GameSimulator.Instance.actionText.AppendText(string.Format("{4}[{0},{1}] se déplace en [{2},{3}]{5}", x, y, listAccessPossible[nb].areaEnd.x, listAccessPossible[nb].areaEnd.y, this.name, Environment.NewLine));
 
                         this.x = listAccessPossible[nb].areaEnd.x;
                         this.y = listAccessPossible[nb].areaEnd.y;
@@ -96,7 +96,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
                         if (listAccessPossible[nb].areaEnd.item != null)
                         {
                             this.hp += listAccessPossible[nb].areaEnd.item.getHealPower();
-                            GameSimulator.Instance.actionText.AppendText(string.Format("Personnage[{0},{1}] a trouver {2}. Son hp augmente de : {3}", x, y, listAccessPossible[nb].areaEnd.item.ToString(), listAccessPossible[nb].areaEnd.item.getHealPower()));
+                            GameSimulator.Instance.actionText.AppendText(string.Format("{4}[{0},{1}] a trouver {2}. Son hp augmente de : {3}{5}", x, y, listAccessPossible[nb].areaEnd.item.ToString(), listAccessPossible[nb].areaEnd.item.getHealPower(), this.name, Environment.NewLine));
                             listAccessPossible[nb].areaEnd.item = null;
                         }
 
@@ -118,7 +118,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
         }
             
         public void Fight(Character toAttack) {
-            GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{3},{4}] attaque {1}[{5},{6}] : hp restants ==> {2}", this.name, toAttack.name, toAttack.hp, this.x, this.y, toAttack.x, toAttack.y));
+            GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{3},{4}] attaque {1}[{5},{6}] : hp restants ==> {2}{7}", this.name, toAttack.name, toAttack.hp, this.x, this.y, toAttack.x, toAttack.y, Environment.NewLine));
             toAttack.GetAssaultFrom(this);
         }
 
@@ -126,11 +126,11 @@ namespace MovieSimulator.Common.BoardGame.Characters
             hp -= fromAttack.strategyFight.Degats();
             if (hp > 0)
             {
-                GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{3},{4}] est attaqué par {1}[{5},{6}] : hp restants ==> {2}", this.name, fromAttack.name, this.hp, this.x, this.y, fromAttack.x, fromAttack.y));
+                GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{3},{4}] est attaqué par {1}[{5},{6}] : hp restants ==> {2}{7}", this.name, fromAttack.name, this.hp, this.x, this.y, fromAttack.x, fromAttack.y, Environment.NewLine));
             }
             else
             {
-                GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{1},{2}] is dead ...", this.name, this.x, this.y));
+                GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{1},{2}] is dead ...{3}", this.name, this.x, this.y, Environment.NewLine));
 
                 if (this.strategyFight.Degats() < fromAttack.strategyFight.Degats())
                     this.strategyFight = fromAttack.strategyFight;
@@ -159,7 +159,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
             {
                 case EMode.ListenMessage:
                     string message = GameSimulator.Instance.sendMessageBox.Text;
-                    toReturn = name + " entend un message ! Le message dit : \"" + message + "\"";
+                    toReturn = name + " entend un message ! Le message dit : \"" + message + "\"" + Environment.NewLine;
                     break;
                 case EMode.DoMyReport:
                     toReturn = UseMyDecoratorToDoMyReport();
@@ -221,11 +221,11 @@ namespace MovieSimulator.Common.BoardGame.Characters
         {
             if (decorator != null)
             {
-                return decorator.DoMyReport();
+                return decorator.DoMyReport() + Environment.NewLine;
             }
             else
             {
-                return DoMyReport();
+                return DoMyReport() + Environment.NewLine;
             }
         }
 
