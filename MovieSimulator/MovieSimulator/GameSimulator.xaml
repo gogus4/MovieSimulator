@@ -4,8 +4,8 @@
         Title="MainWindow" Height="600" Width="900">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.7*"/>
-            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="0.4*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -46,7 +46,7 @@
 
             <TextBlock Text="Scénario :" Grid.Row="0" FontSize="12"/>
 
-            <RichTextBox Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+            <RichTextBox x:Name="actionText" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
         </Grid>
     </Grid>
 </Window>

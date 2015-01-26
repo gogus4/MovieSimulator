@@ -11,7 +11,7 @@ namespace MovieSimulator.Common.Statements
     {
         public override void Execute()
         {
-            Console.WriteLine("La partie est terminée :)");
+            GameSimulator.Instance.actionText.AppendText("La partie est terminée :)");
             MessageBox.Show("La partie est terminée :)");
         }
     }

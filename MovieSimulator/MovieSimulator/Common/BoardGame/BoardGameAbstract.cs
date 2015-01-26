@@ -64,7 +64,7 @@ namespace MovieSimulator.Common.BoardGame
             foreach (Character character in characters)
             {
                 // A afficher sur l'interface graphique
-                Console.WriteLine(character.ExecuteBoardgameStrategy());
+                GameSimulator.Instance.actionText.AppendText(character.ExecuteBoardgameStrategy());
             }
         }
 

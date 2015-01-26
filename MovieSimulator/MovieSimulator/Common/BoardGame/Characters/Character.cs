@@ -78,7 +78,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
                             listAccessPossible.Add(access);
 
                         else
-                            Console.WriteLine("Personnage dans la même case !");
+                            GameSimulator.Instance.actionText.AppendText("Personnage dans la même case !");
                     }
 
                     if (listAccessPossible.Count > 0)
@@ -86,7 +86,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
                         Random rnd = new Random();
                         int nb = rnd.Next(0, listAccessPossible.Count);
 
-                        Console.WriteLine(string.Format("Personnage[{0},{1}] se déplace en [{2},{3}]", x, y, listAccessPossible[nb].areaEnd.x, listAccessPossible[nb].areaEnd.y));
+                        GameSimulator.Instance.actionText.AppendText(string.Format("Personnage[{0},{1}] se déplace en [{2},{3}]", x, y, listAccessPossible[nb].areaEnd.x, listAccessPossible[nb].areaEnd.y));
 
                         this.x = listAccessPossible[nb].areaEnd.x;
                         this.y = listAccessPossible[nb].areaEnd.y;
@@ -96,7 +96,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
                         if (listAccessPossible[nb].areaEnd.item != null)
                         {
                             this.hp += listAccessPossible[nb].areaEnd.item.getHealPower();
-                            Console.WriteLine(string.Format("Personnage[{0},{1}] a trouver {2}. Son hp augmente de : {3}", x, y, listAccessPossible[nb].areaEnd.item.ToString(), listAccessPossible[nb].areaEnd.item.getHealPower()));
+                            GameSimulator.Instance.actionText.AppendText(string.Format("Personnage[{0},{1}] a trouver {2}. Son hp augmente de : {3}", x, y, listAccessPossible[nb].areaEnd.item.ToString(), listAccessPossible[nb].areaEnd.item.getHealPower()));
                             listAccessPossible[nb].areaEnd.item = null;
                         }
 
@@ -118,7 +118,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
         }
             
         public void Fight(Character toAttack) {
-            Console.WriteLine(String.Format("{0}[{3},{4}] attaque {1}[{5},{6}] : hp restants ==> {2}", this, toAttack, toAttack.hp, this.x, this.y, toAttack.x, toAttack.y));
+            GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{3},{4}] attaque {1}[{5},{6}] : hp restants ==> {2}", this, toAttack, toAttack.hp, this.x, this.y, toAttack.x, toAttack.y));
             toAttack.GetAssaultFrom(this);
         }
 
@@ -126,11 +126,11 @@ namespace MovieSimulator.Common.BoardGame.Characters
             hp -= fromAttack.strategyFight.Degats();
             if (hp > 0)
             {
-                Console.WriteLine(String.Format("{0}[{3},{4}] est attaqué par {1}[{5},{6}] : hp restants ==> {2}", this, fromAttack, this.hp, this.x, this.y, fromAttack.x, fromAttack.y));
+                GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{3},{4}] est attaqué par {1}[{5},{6}] : hp restants ==> {2}", this, fromAttack, this.hp, this.x, this.y, fromAttack.x, fromAttack.y));
             }
             else
             {
-                Console.WriteLine(String.Format("{0}[{1},{2}] is dead ...", this, this.x, this.y));
+                GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{1},{2}] is dead ...", this, this.x, this.y));
 
                 if (this.strategyFight.Degats() < fromAttack.strategyFight.Degats())
                     this.strategyFight = fromAttack.strategyFight;
