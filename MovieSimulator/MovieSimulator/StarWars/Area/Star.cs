@@ -12,7 +12,8 @@ namespace MovieSimulator.StarWars.Area
     {
         public Star()
         {
-            Color = Brushes.Gray;
+            Color = Brushes.White;
+            isAccessible = false;
         }
     }
 }

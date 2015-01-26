@@ -58,6 +58,18 @@
     <Compile Include="StarWars\Area\Asteroid.cs" />
     <Compile Include="StarWars\Area\Space.cs" />
     <Compile Include="StarWars\Area\Star.cs" />
+    <Compile Include="StarWars\BoardGameStarWars.cs" />
+    <Compile Include="StarWars\Characters\DarkVador.cs" />
+    <Compile Include="StarWars\Characters\HanSolo.cs" />
+    <Compile Include="StarWars\Characters\LeiaOrgana.cs" />
+    <Compile Include="StarWars\Characters\LukeSkywalker.cs" />
+    <Compile Include="StarWars\Characters\StormTrooper.cs" />
+    <Compile Include="StarWars\FactoryBoardGameStarWars.cs" />
+    <Compile Include="StarWars\Strategy\StrategyFightWithDeathStar.cs" />
+    <Compile Include="StarWars\Strategy\StrategyFightWithFalconMilenium.cs" />
+    <Compile Include="StarWars\Strategy\StrategyFightWithHunterTie.cs" />
+    <Compile Include="StarWars\Strategy\StrategyFightWithTantive.cs" />
+    <Compile Include="StarWars\Strategy\StrategyFightWithXWing.cs" />
     <Page Include="Common\Menu\Menu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -161,9 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PrisonBreak\Characters\" />
-    <Folder Include="StarWars\Characters\" />
     <Folder Include="StarWars\Composite\" />
-    <Folder Include="StarWars\Strategy\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

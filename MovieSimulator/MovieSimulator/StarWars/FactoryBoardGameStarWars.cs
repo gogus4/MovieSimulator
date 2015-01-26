@@ -1,25 +1,21 @@
-﻿using MovieSimulator.Common.BoardGame;
-using MovieSimulator.Common.BoardGame.Access;
-using MovieSimulator.Common.BoardGame.Area;
-using MovieSimulator.Common.BoardGame.Factory;
-using MovieSimulator.HungerGames.Area;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MovieSimulator.HungerGames.Composite;
-using System.Xml.Linq;
-using System.Reflection;
-using System.Xml;
+using MovieSimulator.Common.BoardGame;
+using MovieSimulator.Common.BoardGame.Access;
+using MovieSimulator.Common.BoardGame.Area;
+using MovieSimulator.Common.BoardGame.Factory;
+using MovieSimulator.StarWars.Area;
 
-namespace MovieSimulator.HungerGames
+namespace MovieSimulator.StarWars
 {
-    public class FactoryBoardGameHungerGames : FactoryBoardGameAbstract
+    public class FactoryBoardGameStarWars : FactoryBoardGameAbstract
     {
-        public FactoryBoardGameHungerGames()
+        public FactoryBoardGameStarWars()
         {
-            boardGame = new BoardGameHungerGames();
+            boardGame = new BoardGameStarWars();
         }
 
         public void CreateAreas()
@@ -32,14 +28,14 @@ namespace MovieSimulator.HungerGames
                 {
                     int rd = rnd.Next(0, 10);
 
-                    if (rd == 0)
-                        boardGame.AddArea(new Rock() { x = i, y = j });
+                    if (rd == 0 || rd == 1)
+                        boardGame.AddArea(new Star() { x = i, y = j });
 
-                    else if (rd == 1)
+                    else if (rd == 2 || rd == 3)
                     {
-                        boardGame.AddArea(new Wall() { x = i, y = j });
+                        boardGame.AddArea(new Asteroid() { x = i, y = j });
                     }
-
+                    /*   
                     else if (rd == 2 || rd == 3)
                     {
                         Potion potion = new Potion("Potion de fruit");
@@ -48,19 +44,19 @@ namespace MovieSimulator.HungerGames
 
                         boardGame.AddArea(new Water() { x = i, y = j, item = potion });
                     }
-
+                    
                     else if (rd > 3 && rd < 6)
                         boardGame.AddArea(new Grass() { x = i, y = j, item = new Pomme() });
-
+                    */
                     else
-                        boardGame.AddArea(new Square() { x = i, y = j });
+                        boardGame.AddArea(new Space() { x = i, y = j });
                 }
             }
         }
 
         public override BoardGameAbstract CreateBoardGame(int size)
         {
-            boardGame = new BoardGameHungerGames(size);
+            boardGame = new BoardGameStarWars(size);
 
             //LoadBoardGame("HungerGames_23.01.2015.xml");
 

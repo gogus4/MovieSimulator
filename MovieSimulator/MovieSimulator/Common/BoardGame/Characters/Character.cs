@@ -118,7 +118,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
         }
             
         public void Fight(Character toAttack) {
-            GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{3},{4}] attaque {1}[{5},{6}] : hp restants ==> {2}", this, toAttack, toAttack.hp, this.x, this.y, toAttack.x, toAttack.y));
+            GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{3},{4}] attaque {1}[{5},{6}] : hp restants ==> {2}", this.name, toAttack.name, toAttack.hp, this.x, this.y, toAttack.x, toAttack.y));
             toAttack.GetAssaultFrom(this);
         }
 
@@ -126,11 +126,11 @@ namespace MovieSimulator.Common.BoardGame.Characters
             hp -= fromAttack.strategyFight.Degats();
             if (hp > 0)
             {
-                GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{3},{4}] est attaqué par {1}[{5},{6}] : hp restants ==> {2}", this, fromAttack, this.hp, this.x, this.y, fromAttack.x, fromAttack.y));
+                GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{3},{4}] est attaqué par {1}[{5},{6}] : hp restants ==> {2}", this.name, fromAttack.name, this.hp, this.x, this.y, fromAttack.x, fromAttack.y));
             }
             else
             {
-                GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{1},{2}] is dead ...", this, this.x, this.y));
+                GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{1},{2}] is dead ...", this.name, this.x, this.y));
 
                 if (this.strategyFight.Degats() < fromAttack.strategyFight.Degats())
                     this.strategyFight = fromAttack.strategyFight;
