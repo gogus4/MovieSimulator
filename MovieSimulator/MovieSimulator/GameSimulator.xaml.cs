@@ -18,7 +18,6 @@ namespace MovieSimulator
     public partial class GameSimulator : Window
     {
         private static GameSimulator _instance;
-
         public static GameSimulator Instance
         {
             get
