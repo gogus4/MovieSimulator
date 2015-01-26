@@ -91,6 +91,7 @@
     <Compile Include="Common\BoardGame\Observer\ObservedAbstractSubject.cs" />
     <Compile Include="Common\BoardGame\Observer\Organization.cs" />
     <Compile Include="Common\BoardGame\Strategy\StrategyFight.cs" />
+    <Compile Include="Common\BoardGame\Utils\ReflexionHelper.cs" />
     <Compile Include="Common\GamingEnvironment.cs" />
     <Compile Include="Common\Menu\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
