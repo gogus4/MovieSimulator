@@ -91,7 +91,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
                         this.x = listAccessPossible[nb].areaEnd.x;
                         this.y = listAccessPossible[nb].areaEnd.y;
 
-                        AddDecoratorToDoMyReport(listAccessPossible[nb].areaEnd);
+                        AddDecoratorToDoMyReport(listAccessPossible[nb].areaEnd, null);
 
                         if (listAccessPossible[nb].areaEnd.item != null)
                         {
@@ -127,6 +127,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
             if (hp > 0)
             {
                 GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{3},{4}] est attaqué par {1}[{5},{6}] : hp restants ==> {2}{7}", this.name, fromAttack.name, this.hp, this.x, this.y, fromAttack.x, fromAttack.y, Environment.NewLine));
+                AddDecoratorToDoMyReport(null, new BloodDecorator());
             }
             else
             {
@@ -172,21 +173,29 @@ namespace MovieSimulator.Common.BoardGame.Characters
             return toReturn;
         }
 
-        public void AddDecoratorToDoMyReport(AreaAbstract area)
+        public void AddDecoratorToDoMyReport(AreaAbstract area, DecoratorAbstract toAdd)
         {
             Boolean isAlreadyDecorated = false;
             Boolean needToAddADecorator = false;
             DecoratorAbstract dec = decorator;
             DecoratorAbstract newDecorator = null;
 
-            if (typeof(Grass).Equals(area.GetType())){
-                newDecorator = new GrassDecorator();
-                needToAddADecorator = true;
-            }
-            else if (typeof(Water).Equals(area.GetType()))
+            if (toAdd == null && area != null)
             {
-                newDecorator = new WaterDecorator();
-                needToAddADecorator = true;
+                if (typeof(Grass).Equals(area.GetType()))
+                {
+                    newDecorator = new GrassDecorator();
+                    needToAddADecorator = true;
+                }
+                else if (typeof(Water).Equals(area.GetType()))
+                {
+                    newDecorator = new WaterDecorator();
+                    needToAddADecorator = true;
+                }
+            }
+            else
+            {
+                newDecorator = toAdd;
             }
 
             if (dec != null && needToAddADecorator)
