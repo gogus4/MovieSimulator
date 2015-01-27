@@ -62,9 +62,9 @@ namespace MovieSimulator.HungerGames
         {
             boardGame = new BoardGameHungerGames(size);
 
-            //LoadBoardGame("HungerGames_23.01.2015.xml");
+            LoadBoardGame("XML/HungerGames.xml");
 
-            CreateAreas();
+            //CreateAreas();
 
             // SaveBoardGame("toto");
 

@@ -28,7 +28,7 @@ namespace MovieSimulator.Common.BoardGame.Factory
             var areas = from listAreas in xelement.Element("areas").Elements("area")
                         select listAreas;
 
-            string nameSimulation = path.Split('_')[0];
+            string nameSimulation = Configuration.Instance.CurrentSimulator;
             AreaAbstract o;
 
             foreach (XElement area in areas)

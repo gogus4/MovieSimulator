@@ -26,6 +26,8 @@ namespace MovieSimulator.Common
             }
         }
 
+        public string CurrentSimulator { get; set; }
+
         public Configuration()
         {
 

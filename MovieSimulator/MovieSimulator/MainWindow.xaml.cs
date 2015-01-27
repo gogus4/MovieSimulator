@@ -33,6 +33,7 @@ namespace MovieSimulator
         private void Tiles_MenuClick(object sender, TileMenuClickEventArgs e)
         {
             string simulator = e.Entry.Name.Replace(" ", "");
+            Configuration.Instance.CurrentSimulator = simulator;
 
             Type type = Assembly.GetExecutingAssembly().GetType("MovieSimulator." + simulator + ".FactoryBoardGame" + simulator);
             object factory = Activator.CreateInstance(type);
