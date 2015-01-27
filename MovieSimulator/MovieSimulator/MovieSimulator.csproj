@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PrisonBreak\Area\Ground.cs" />
     <Compile Include="StarWars\Area\Asteroid.cs" />
     <Compile Include="StarWars\Area\AsteroidChamp.cs" />
     <Compile Include="StarWars\Area\Space.cs" />
