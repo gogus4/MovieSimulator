@@ -12,6 +12,10 @@ using MovieSimulator.Common.BoardGame.Characters.Decorator;
 using MovieSimulator.Common.BoardGame.Area;
 using MovieSimulator.HungerGames.Area;
 using MovieSimulator.HungerGames.Characters.Decorator;
+using MovieSimulator.StarWars.Area;
+using MovieSimulator.StarWars.Characters.Decorator;
+using MovieSimulator.StarWars;
+using MovieSimulator.HungerGames;
 
 namespace MovieSimulator.Common.BoardGame.Characters
 {
@@ -127,7 +131,14 @@ namespace MovieSimulator.Common.BoardGame.Characters
             if (hp > 0)
             {
                 GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{3},{4}] est attaqué par {1}[{5},{6}] : hp restants ==> {2}{7}", this.name, fromAttack.name, this.hp, this.x, this.y, fromAttack.x, fromAttack.y, Environment.NewLine));
-                AddDecoratorToDoMyReport(null, new BloodDecorator());
+                if (GamingEnvironment.Instance.boardGame.GetType().Equals(typeof(BoardGameStarWars)))
+                {
+                    AddDecoratorToDoMyReport(null, new LaserHoleDecorator());
+                }
+                if (GamingEnvironment.Instance.boardGame.GetType().Equals(typeof(BoardGameHungerGames)))
+                {
+                    AddDecoratorToDoMyReport(null, new BloodDecorator());
+                }                
             }
             else
             {
@@ -190,6 +201,11 @@ namespace MovieSimulator.Common.BoardGame.Characters
                 else if (typeof(Water).Equals(area.GetType()))
                 {
                     newDecorator = new WaterDecorator();
+                    needToAddADecorator = true;
+                }
+                else if (typeof(Asteroid).Equals(area.GetType()))
+                {
+                    newDecorator = new ScratchDecorator();
                     needToAddADecorator = true;
                 }
             }

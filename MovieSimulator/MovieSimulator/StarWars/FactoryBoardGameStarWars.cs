@@ -44,10 +44,10 @@ namespace MovieSimulator.StarWars
 
                         boardGame.AddArea(new Water() { x = i, y = j, item = potion });
                     }
-                    
-                    else if (rd > 3 && rd < 6)
-                        boardGame.AddArea(new Grass() { x = i, y = j, item = new Pomme() });
                     */
+                    else if (rd > 3 && rd < 6)
+                        boardGame.AddArea(new AsteroidChamp() { x = i, y = j });
+                    
                     else
                         boardGame.AddArea(new Space() { x = i, y = j });
                 }

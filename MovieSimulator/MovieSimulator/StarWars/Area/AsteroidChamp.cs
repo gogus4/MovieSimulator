@@ -8,11 +8,11 @@ using System.Windows.Media;
 
 namespace MovieSimulator.StarWars.Area
 {
-    public class Asteroid : AreaAbstract
+    public class AsteroidChamp : AreaAbstract
     {
-        public Asteroid()
+        public AsteroidChamp()
         {
-            Color = Brushes.DarkGray;
+            Color = Brushes.Gray;
             isAccessible = false;
         }
     }

@@ -56,10 +56,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="StarWars\Area\Asteroid.cs" />
+    <Compile Include="StarWars\Area\AsteroidChamp.cs" />
     <Compile Include="StarWars\Area\Space.cs" />
     <Compile Include="StarWars\Area\Star.cs" />
     <Compile Include="StarWars\BoardGameStarWars.cs" />
     <Compile Include="StarWars\Characters\DarkVador.cs" />
+    <Compile Include="StarWars\Characters\Decorator\LaserHoleDecorator.cs" />
+    <Compile Include="StarWars\Characters\Decorator\ScratchDecorator.cs" />
     <Compile Include="StarWars\Characters\HanSolo.cs" />
     <Compile Include="StarWars\Characters\LeiaOrgana.cs" />
     <Compile Include="StarWars\Characters\LukeSkywalker.cs" />
