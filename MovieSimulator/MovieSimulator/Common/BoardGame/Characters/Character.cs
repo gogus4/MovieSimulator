@@ -16,6 +16,10 @@ using MovieSimulator.StarWars.Area;
 using MovieSimulator.StarWars.Characters.Decorator;
 using MovieSimulator.StarWars;
 using MovieSimulator.HungerGames;
+using MovieSimulator.PrisonBreak;
+using MovieSimulator.PrisonBreak.Characters.Decorator;
+using MovieSimulator.PrisonBreak.Characters;
+using MovieSimulator.PrisonBreak.Strategy;
 
 namespace MovieSimulator.Common.BoardGame.Characters
 {
@@ -124,6 +128,13 @@ namespace MovieSimulator.Common.BoardGame.Characters
         public void Fight(Character toAttack) {
             GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{3},{4}] attaque {1}[{5},{6}] : hp restants ==> {2}{7}", this.name, toAttack.name, toAttack.hp, this.x, this.y, toAttack.x, toAttack.y, Environment.NewLine));
             toAttack.GetAssaultFrom(this);
+            if(toAttack.hp <= 0){
+                if (toAttack.GetType().Equals(typeof(Guard)))
+                {
+                    AddDecoratorToDoMyReport(null, new HasKey());
+                }
+            }
+            
         }
 
         public void GetAssaultFrom(Character fromAttack) {
@@ -138,7 +149,15 @@ namespace MovieSimulator.Common.BoardGame.Characters
                 if (GamingEnvironment.Instance.boardGame.GetType().Equals(typeof(BoardGameHungerGames)))
                 {
                     AddDecoratorToDoMyReport(null, new BloodDecorator());
-                }                
+                }
+                if (GamingEnvironment.Instance.boardGame.GetType().Equals(typeof(BoardGamePrisonBreak)))
+                {
+                    AddDecoratorToDoMyReport(null, new InjuryDecorator());
+                    if (fromAttack.strategyFight.GetType().Equals(typeof(StrategyFightWithTruncheon)))
+                    {
+                        AddDecoratorToDoMyReport(null, new TruncheonBlowDecorator());
+                    }
+                }
             }
             else
             {

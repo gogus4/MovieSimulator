@@ -8,11 +8,11 @@ using MovieSimulator.Common.BoardGame.Area;
 
 namespace MovieSimulator.PrisonBreak.Area
 {
-    public class Ground : AreaAbstract
+    public class Grid : AreaAbstract
     {
-        public Ground()
+        public Grid()
         {
-            Color = Brushes.White;
+            Color = Brushes.Gray;
         }
     }
 }

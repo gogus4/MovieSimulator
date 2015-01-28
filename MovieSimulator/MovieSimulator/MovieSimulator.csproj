@@ -55,7 +55,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PrisonBreak\Area\Door.cs" />
+    <Compile Include="PrisonBreak\Area\Grid.cs" />
     <Compile Include="PrisonBreak\Area\Ground.cs" />
+    <Compile Include="PrisonBreak\Area\Wall.cs" />
+    <Compile Include="PrisonBreak\BoardGamePrisonBreak.cs" />
+    <Compile Include="PrisonBreak\Characters\Decorator\InjuryDecorator.cs" />
+    <Compile Include="PrisonBreak\Characters\Decorator\HasKey.cs" />
+    <Compile Include="PrisonBreak\Characters\Decorator\TruncheonBlowDecorator.cs" />
+    <Compile Include="PrisonBreak\Characters\Guard.cs" />
+    <Compile Include="PrisonBreak\Characters\LincolnBurrows.cs" />
+    <Compile Include="PrisonBreak\Characters\MichaelScofield.cs" />
+    <Compile Include="PrisonBreak\FactoryBoardGamePrisonBreak.cs" />
+    <Compile Include="PrisonBreak\Strategy\StrategyFightWithFist.cs" />
+    <Compile Include="PrisonBreak\Strategy\StrategyFightWithScrewdriver.cs" />
+    <Compile Include="PrisonBreak\Strategy\StrategyFightWithTruncheon.cs" />
     <Compile Include="StarWars\Area\Asteroid.cs" />
     <Compile Include="StarWars\Area\AsteroidChamp.cs" />
     <Compile Include="StarWars\Area\Space.cs" />
@@ -176,7 +190,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="PrisonBreak\Characters\" />
+    <Folder Include="PrisonBreak\Composite\" />
     <Folder Include="StarWars\Composite\" />
   </ItemGroup>
   <ItemGroup>
