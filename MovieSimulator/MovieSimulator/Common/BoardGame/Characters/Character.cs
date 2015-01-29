@@ -20,6 +20,7 @@ using MovieSimulator.PrisonBreak;
 using MovieSimulator.PrisonBreak.Characters.Decorator;
 using MovieSimulator.PrisonBreak.Characters;
 using MovieSimulator.PrisonBreak.Strategy;
+using MovieSimulator.Common.BoardGame.Characters.Team;
 
 namespace MovieSimulator.Common.BoardGame.Characters
 {
@@ -40,6 +41,8 @@ namespace MovieSimulator.Common.BoardGame.Characters
         public EMode boardgameMode { get; set; }
 
         public DecoratorAbstract decorator { get; set; }
+
+        public TeamAbstract team { get; set; }
 
         public Character(int x, int y)
             : this()
@@ -121,7 +124,8 @@ namespace MovieSimulator.Common.BoardGame.Characters
                             .Where(x =>
                                 (x.x <= this.x + this.strategyFight.Range() && x.x >= this.x - this.strategyFight.Range()) &&
                                 (x.y <= this.y + this.strategyFight.Range() && x.y >= this.y - this.strategyFight.Range())
-                            ).FirstOrDefault();
+                            ).Where(x => (this.team == null || (x.team.GetType() != this.team.GetType())))
+                            .FirstOrDefault();
             return character;
         }
             

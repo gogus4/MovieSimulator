@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MovieSimulator.Common.BoardGame.Characters;
 using MovieSimulator.Common.BoardGame.Command;
 using MovieSimulator.StarWars.Strategy;
+using MovieSimulator.StarWars.Characters.Team;
 
 namespace MovieSimulator.StarWars.Characters
 {
@@ -27,6 +28,7 @@ namespace MovieSimulator.StarWars.Characters
             command = new CommandUpdateCharacter();
             strategyFight = new StrategyFightWithDeathStar();
             name = "Dark Vador";
+            team = new RepublicTeam();
         }
     }
 }

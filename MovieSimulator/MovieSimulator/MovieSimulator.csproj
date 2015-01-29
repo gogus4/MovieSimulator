@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\BoardGame\Characters\Team\TeamAbstract.cs" />
+    <Compile Include="HungerGames\Characters\HungerGameCharacterAbstract.cs" />
     <Compile Include="PrisonBreak\Area\Door.cs" />
     <Compile Include="PrisonBreak\Area\Grid.cs" />
     <Compile Include="PrisonBreak\Area\Ground.cs" />
@@ -66,6 +68,8 @@
     <Compile Include="PrisonBreak\Characters\Guard.cs" />
     <Compile Include="PrisonBreak\Characters\LincolnBurrows.cs" />
     <Compile Include="PrisonBreak\Characters\MichaelScofield.cs" />
+    <Compile Include="PrisonBreak\Characters\Team\GuardTeam.cs" />
+    <Compile Include="PrisonBreak\Characters\Team\LincolnTeam.cs" />
     <Compile Include="PrisonBreak\FactoryBoardGamePrisonBreak.cs" />
     <Compile Include="PrisonBreak\Strategy\StrategyFightWithFist.cs" />
     <Compile Include="PrisonBreak\Strategy\StrategyFightWithScrewdriver.cs" />
@@ -82,6 +86,8 @@
     <Compile Include="StarWars\Characters\LeiaOrgana.cs" />
     <Compile Include="StarWars\Characters\LukeSkywalker.cs" />
     <Compile Include="StarWars\Characters\StormTrooper.cs" />
+    <Compile Include="StarWars\Characters\Team\RebelTeam.cs" />
+    <Compile Include="StarWars\Characters\Team\RepublicTeam.cs" />
     <Compile Include="StarWars\FactoryBoardGameStarWars.cs" />
     <Compile Include="StarWars\Strategy\StrategyFightWithDeathStar.cs" />
     <Compile Include="StarWars\Strategy\StrategyFightWithFalconMilenium.cs" />

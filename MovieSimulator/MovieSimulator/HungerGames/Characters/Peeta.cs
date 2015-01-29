@@ -27,6 +27,7 @@ namespace MovieSimulator.HungerGames.Characters
             command = new CommandUpdateCharacter();
             strategyFight = new StrategyFightWithArm();
             name = "Peeta";
+            team = null;
         }
     }
 }

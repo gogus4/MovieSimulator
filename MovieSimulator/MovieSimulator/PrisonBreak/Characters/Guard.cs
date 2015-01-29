@@ -8,6 +8,7 @@ using MovieSimulator.PrisonBreak.Strategy;
 using MovieSimulator.Common.BoardGame.Area;
 using MovieSimulator.Common.BoardGame.Characters;
 using MovieSimulator.Common.BoardGame.Command;
+using MovieSimulator.PrisonBreak.Characters.Team;
 
 namespace MovieSimulator.PrisonBreak.Characters
 {
@@ -29,6 +30,7 @@ namespace MovieSimulator.PrisonBreak.Characters
             command = new CommandUpdateCharacter();
             strategyFight = new StrategyFightWithTruncheon();
             name = "Garde";
+            team = new GuardTeam();
         }
 
     }
