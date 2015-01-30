@@ -175,7 +175,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
             {
                 case EMode.ListenMessage:
                     string message = GameSimulator.Instance.sendMessageBox.Text;
-                    toReturn = name + " entend un message ! Le message dit : \"" + message + "\"" + Environment.NewLine;
+                    toReturn = name + " entend un message ! Le message dit : \"" + message + "\"";
                     break;
                 case EMode.DoMyReport:
                     toReturn = UseMyDecoratorToDoMyReport();
@@ -226,11 +226,11 @@ namespace MovieSimulator.Common.BoardGame.Characters
         {
             if (decorator != null)
             {
-                return decorator.DoMyReport() + Environment.NewLine;
+                return decorator.DoMyReport();
             }
             else
             {
-                return DoMyReport() + Environment.NewLine;
+                return DoMyReport();
             }
         }
 
