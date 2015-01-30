@@ -102,7 +102,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
                         this.x = listAccessPossible[nb].areaEnd.x;
                         this.y = listAccessPossible[nb].areaEnd.y;
 
-                        AddDecoratorToDoMyReport(listAccessPossible[nb].areaEnd, null);
+                        GamingEnvironment.Instance.boardGame.SetOrganisationGroundDecorator(this, listAccessPossible[nb].areaEnd);
 
                         if (listAccessPossible[nb].areaEnd.item != null)
                         {
@@ -124,7 +124,7 @@ namespace MovieSimulator.Common.BoardGame.Characters
                             .Where(x =>
                                 (x.x <= this.x + this.strategyFight.Range() && x.x >= this.x - this.strategyFight.Range()) &&
                                 (x.y <= this.y + this.strategyFight.Range() && x.y >= this.y - this.strategyFight.Range())
-                            ).Where(x => (this.team == null || (x.team.GetType() != this.team.GetType())))
+                            ).Where(x => (this.team == null || x.team == null || (x.team.GetType() != this.team.GetType())))
                             .FirstOrDefault();
             return character;
         }
@@ -132,13 +132,8 @@ namespace MovieSimulator.Common.BoardGame.Characters
         public void Fight(Character toAttack) {
             GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{3},{4}] attaque {1}[{5},{6}] : hp restants ==> {2}{7}", this.name, toAttack.name, toAttack.hp, this.x, this.y, toAttack.x, toAttack.y, Environment.NewLine));
             toAttack.GetAssaultFrom(this);
-            if(toAttack.hp <= 0){
-                if (toAttack.GetType().Equals(typeof(Guard)))
-                {
-                    AddDecoratorToDoMyReport(null, new HasKey());
-                }
-            }
-            
+
+            GamingEnvironment.Instance.boardGame.SetOrganisationFightDecorator(this, toAttack);
         }
 
         public void GetAssaultFrom(Character fromAttack) {
@@ -146,22 +141,8 @@ namespace MovieSimulator.Common.BoardGame.Characters
             if (hp > 0)
             {
                 GameSimulator.Instance.actionText.AppendText(String.Format("{0}[{3},{4}] est attaqué par {1}[{5},{6}] : hp restants ==> {2}{7}", this.name, fromAttack.name, this.hp, this.x, this.y, fromAttack.x, fromAttack.y, Environment.NewLine));
-                if (GamingEnvironment.Instance.boardGame.GetType().Equals(typeof(BoardGameStarWars)))
-                {
-                    AddDecoratorToDoMyReport(null, new LaserHoleDecorator());
-                }
-                if (GamingEnvironment.Instance.boardGame.GetType().Equals(typeof(BoardGameHungerGames)))
-                {
-                    AddDecoratorToDoMyReport(null, new BloodDecorator());
-                }
-                if (GamingEnvironment.Instance.boardGame.GetType().Equals(typeof(BoardGamePrisonBreak)))
-                {
-                    AddDecoratorToDoMyReport(null, new InjuryDecorator());
-                    if (fromAttack.strategyFight.GetType().Equals(typeof(StrategyFightWithTruncheon)))
-                    {
-                        AddDecoratorToDoMyReport(null, new TruncheonBlowDecorator());
-                    }
-                }
+
+                GamingEnvironment.Instance.boardGame.SetOrganisationAssaultDecorator(this, fromAttack);
             }
             else
             {
@@ -207,37 +188,13 @@ namespace MovieSimulator.Common.BoardGame.Characters
             return toReturn;
         }
 
-        public void AddDecoratorToDoMyReport(AreaAbstract area, DecoratorAbstract toAdd)
+        public void AddDecoratorToDoMyReport(DecoratorAbstract toAdd)
         {
             Boolean isAlreadyDecorated = false;
-            Boolean needToAddADecorator = false;
             DecoratorAbstract dec = decorator;
-            DecoratorAbstract newDecorator = null;
+            DecoratorAbstract newDecorator = toAdd;
 
-            if (toAdd == null && area != null)
-            {
-                if (typeof(Grass).Equals(area.GetType()))
-                {
-                    newDecorator = new GrassDecorator();
-                    needToAddADecorator = true;
-                }
-                else if (typeof(Water).Equals(area.GetType()))
-                {
-                    newDecorator = new WaterDecorator();
-                    needToAddADecorator = true;
-                }
-                else if (typeof(Asteroid).Equals(area.GetType()))
-                {
-                    newDecorator = new ScratchDecorator();
-                    needToAddADecorator = true;
-                }
-            }
-            else
-            {
-                newDecorator = toAdd;
-            }
-
-            if (dec != null && needToAddADecorator)
+            if (dec != null)
             {
                 while (dec != null)
                 {

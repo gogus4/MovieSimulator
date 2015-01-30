@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using MovieSimulator.HungerGames.Characters;
 using MovieSimulator.Common.BoardGame.Characters;
 using MovieSimulator.Common;
+using MovieSimulator.Common.BoardGame.Characters.Decorator;
+using MovieSimulator.HungerGames.Area;
+using MovieSimulator.HungerGames.Characters.Decorator;
 
 namespace MovieSimulator.HungerGames
 {
@@ -52,6 +55,28 @@ namespace MovieSimulator.HungerGames
                 }
             }
             characters = toKeep;
+        }
+
+        public override void SetOrganisationGroundDecorator(Character character, AreaAbstract area)
+        {
+            if (typeof(Grass).Equals(area.GetType()))
+            {
+                character.AddDecoratorToDoMyReport(new GrassDecorator());
+            }
+            else if (typeof(Water).Equals(area.GetType()))
+            {
+                character.AddDecoratorToDoMyReport(new WaterDecorator());
+            }
+        }
+
+        public override void SetOrganisationAssaultDecorator(Character character, Character fromAssault)
+        {
+            character.AddDecoratorToDoMyReport(new BloodDecorator());
+        }
+
+        public override void SetOrganisationFightDecorator(Character character, Character toAttack)
+        {
+
         }
     }
 }

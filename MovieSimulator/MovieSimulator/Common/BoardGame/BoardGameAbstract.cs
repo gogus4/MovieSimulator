@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MovieSimulator.Common.BoardGame.Characters;
 using MovieSimulator.Common.BoardGame.Observer;
+using MovieSimulator.Common.BoardGame.Characters.Decorator;
 
 namespace MovieSimulator.Common.BoardGame
 {
@@ -67,6 +68,12 @@ namespace MovieSimulator.Common.BoardGame
                 GameSimulator.Instance.actionText.AppendText(character.ExecuteBoardgameStrategy());
             }
         }
+
+        public abstract void SetOrganisationGroundDecorator(Character character, AreaAbstract area);
+
+        public abstract void SetOrganisationAssaultDecorator(Character character, Character fromAssault);
+
+        public abstract void SetOrganisationFightDecorator(Character character, Character toAttack);
 
         public void ChangeObserverMode(EMode eMode)
         {

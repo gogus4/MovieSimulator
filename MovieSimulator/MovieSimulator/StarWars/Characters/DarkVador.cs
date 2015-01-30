@@ -29,6 +29,7 @@ namespace MovieSimulator.StarWars.Characters
             strategyFight = new StrategyFightWithDeathStar();
             name = "Dark Vador";
             team = new RepublicTeam();
+            hp = 300;
         }
     }
 }

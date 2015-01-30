@@ -8,6 +8,9 @@ using MovieSimulator.Common.BoardGame.Characters;
 using MovieSimulator.Common;
 using MovieSimulator.Common.BoardGame;
 using MovieSimulator.Common.BoardGame.Area;
+using MovieSimulator.Common.BoardGame.Characters.Decorator;
+using MovieSimulator.PrisonBreak.Characters.Decorator;
+using MovieSimulator.PrisonBreak.Strategy;
 
 namespace MovieSimulator.PrisonBreak
 {
@@ -51,6 +54,31 @@ namespace MovieSimulator.PrisonBreak
                 }
             }
             characters = toKeep;
+        }
+
+        public override void SetOrganisationGroundDecorator(Character character, AreaAbstract area)
+        {
+
+        }
+
+        public override void SetOrganisationAssaultDecorator(Character character, Character fromAttack)
+        {
+            character.AddDecoratorToDoMyReport(new InjuryDecorator());
+            if (fromAttack.strategyFight.GetType().Equals(typeof(StrategyFightWithTruncheon)))
+            {
+                character.AddDecoratorToDoMyReport(new TruncheonBlowDecorator());
+            }
+        }
+
+        public override void SetOrganisationFightDecorator(Character character, Character toAttack)
+        {
+            if (toAttack.hp <= 0)
+            {
+                if (toAttack.GetType().Equals(typeof(Guard)))
+                {
+                    character.AddDecoratorToDoMyReport(new HasKey());
+                }
+            }
         }
     }
 }

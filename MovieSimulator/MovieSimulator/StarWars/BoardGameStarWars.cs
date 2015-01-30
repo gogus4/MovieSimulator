@@ -8,6 +8,9 @@ using MovieSimulator.Common.BoardGame.Characters;
 using MovieSimulator.Common;
 using MovieSimulator.Common.BoardGame;
 using MovieSimulator.Common.BoardGame.Area;
+using MovieSimulator.Common.BoardGame.Characters.Decorator;
+using MovieSimulator.StarWars.Characters.Decorator;
+using MovieSimulator.StarWars.Area;
 
 namespace MovieSimulator.StarWars
 {
@@ -50,6 +53,25 @@ namespace MovieSimulator.StarWars
                 }
             }
             characters = toKeep;
+        }
+
+        public override void SetOrganisationGroundDecorator(Character character, AreaAbstract area)
+        {
+            if (typeof(AsteroidChamp).Equals(area.GetType()))
+            {
+                character.AddDecoratorToDoMyReport(new ScratchDecorator());
+            }
+
+        }
+
+        public override void SetOrganisationAssaultDecorator(Character character, Character fromAssault)
+        {
+            character.AddDecoratorToDoMyReport(new LaserHoleDecorator());
+        }
+
+        public override void SetOrganisationFightDecorator(Character character, Character toAttack)
+        {
+            
         }
     }
 }

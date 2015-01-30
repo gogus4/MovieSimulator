@@ -13,7 +13,7 @@ namespace MovieSimulator.StarWars.Area
         public AsteroidChamp()
         {
             Color = Brushes.Gray;
-            isAccessible = false;
+            isAccessible = true;
         }
     }
 }
