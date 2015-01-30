@@ -1,6 +1,7 @@
 ﻿<Window x:Class="MovieSimulator.GameSimulator"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:fileList="clr-namespace:MovieSimulator.Common.BoardGame.Utils"
         Title="MainWindow" Height="600" Width="900">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -16,12 +17,10 @@
 
         <Menu Grid.Row="0" Grid.ColumnSpan="2" Background="Transparent">
             <MenuItem Header="Fichier">
-                <MenuItem Command="New" x:Name="NewSimulation" Click="NewSimulation_Click"></MenuItem>
-                <MenuItem Command="Open"></MenuItem>
-                <MenuItem Command="Save"></MenuItem>
-                <MenuItem Command="SaveAs"></MenuItem>
+                <MenuItem Header="Nouveau" x:Name="NewSimulation" Click="NewSimulation_Click"/>
+                <MenuItem Header="Sauvegarder" x:Name="SaveSimulation" Click="SaveSimulation_Click" />
                 <Separator></Separator>
-                <MenuItem Command="Close"></MenuItem>
+                <fileList:RecentFileList x:Name="RecentFileList" />
             </MenuItem>
         </Menu>
 

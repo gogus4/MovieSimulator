@@ -21,12 +21,12 @@ namespace MovieSimulator.Common.BoardGame.Utils
             }
         }
 
-        public object GetInstance(Assembly a, string simulation, string className)
+        public object GetInstance(Assembly a, string simulation, string className, string type)
         {
             try
             {
-                Type type = a.GetType("MovieSimulator." + simulation + ".Area." + className);
-                return Activator.CreateInstance(type);
+                Type objectToCreate = a.GetType("MovieSimulator." + simulation + "." + type + "." + className);
+                return Activator.CreateInstance(objectToCreate);
             }
             catch (ArgumentNullException) { return null; }
         }

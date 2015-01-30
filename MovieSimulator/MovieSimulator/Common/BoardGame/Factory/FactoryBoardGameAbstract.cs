@@ -8,6 +8,7 @@ using System.Xml;
 using System.Xml.Linq;
 using MovieSimulator.Common.BoardGame.Area;
 using MovieSimulator.Common.BoardGame.Utils;
+using MovieSimulator.Common.BoardGame.Characters;
 
 namespace MovieSimulator.Common.BoardGame.Factory
 {
@@ -22,7 +23,7 @@ namespace MovieSimulator.Common.BoardGame.Factory
 
         public abstract BoardGameAbstract CreateBoardGame(int size);
 
-        public void LoadBoardGame(string path)
+        public void FillBoardGame(string path)
         {
             XElement xelement = XElement.Load(path);
             var areas = from listAreas in xelement.Element("areas").Elements("area")
@@ -34,7 +35,7 @@ namespace MovieSimulator.Common.BoardGame.Factory
             foreach (XElement area in areas)
             {
                 if (area.Attribute("type").Value != "Square")
-                    o = (AreaAbstract)ReflexionHelper.Instance.GetInstance(Assembly.GetExecutingAssembly(), nameSimulation, area.Attribute("type").Value);
+                    o = (AreaAbstract)ReflexionHelper.Instance.GetInstance(Assembly.GetExecutingAssembly(), nameSimulation, area.Attribute("type").Value,"Area");
 
                 else
                     o = new Square();
@@ -44,32 +45,6 @@ namespace MovieSimulator.Common.BoardGame.Factory
 
                 boardGame.AddArea(o);
             }
-        }
-
-        public void SaveBoardGame(string path)
-        {
-            XmlWriter writer = XmlWriter.Create("books.xml");
-
-            writer.WriteStartElement("boardgame");
-
-            writer.WriteStartElement("areas");
-
-            foreach (AreaAbstract area in boardGame.areas)
-            {
-                writer.WriteStartElement("area");
-                writer.WriteAttributeString("x", area.x.ToString());
-                writer.WriteAttributeString("y", area.y.ToString());
-                writer.WriteAttributeString("type", area.GetType().Name);
-                writer.WriteEndElement();
-            }
-
-            // Add characters
-            writer.WriteStartElement("characters");
-            writer.WriteEndElement();
-
-            writer.WriteEndElement();
-            writer.WriteEndElement();
-            writer.Close();
         }
     }
 }

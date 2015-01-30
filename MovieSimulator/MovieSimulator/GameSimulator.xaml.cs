@@ -12,6 +12,9 @@ using MovieSimulator.Common.Statements;
 using MovieSimulator.Common.BoardGame.Memento;
 using System.Linq;
 using MovieSimulator.Common.BoardGame.Observer;
+using System;
+using System.Reflection;
+using MovieSimulator.Common.BoardGame.Factory;
 
 namespace MovieSimulator
 {
@@ -52,8 +55,12 @@ namespace MovieSimulator
         public GameSimulator()
         {
             InitializeComponent();
+            RecentFileList.Init();
 
-            //GamingEnvironment.Instance.CreateBoardGame(new FactoryBoardGameHungerGames(), 20);
+            foreach (string file in Configuration.Instance.GetHistorySavedGame())
+                RecentFileList.InsertFile(file);
+
+            RecentFileList.MenuClick += (s, e) => LoadFileBoardGame(e.Filepath);
 
             _instance = this;
 
@@ -62,6 +69,24 @@ namespace MovieSimulator
 
             caretaker = new Caretaker();
             originator = new Originator();
+        }
+
+        public bool LoadFileBoardGame(string filepath)
+        {
+            Configuration.Instance.CurrentPath = filepath;
+
+            GamingEnvironment.Instance.LoadBoardGame("XML/" + filepath);
+
+            foreach (AreaAbstract area in GamingEnvironment.Instance.boardGame.areas)
+                area.UpdateGraphic();
+
+            foreach (Character character in GamingEnvironment.Instance.boardGame.characters)
+            {
+                var area = GamingEnvironment.Instance.boardGame.areas.Where(x => x.x == character.x && x.y == character.y).FirstOrDefault();
+                area.UpdateGraphic();
+            }
+
+            return true;
         }
 
         public void UpdateArea(AreaAbstract area)
@@ -181,6 +206,23 @@ namespace MovieSimulator
         private void ClearConsole_Click(object sender, RoutedEventArgs e)
         {
             actionText.Document.Blocks.Clear();
+        }
+
+        private void SaveSimulation_Click(object sender, RoutedEventArgs e)
+        {
+            if (Configuration.Instance.CurrentPath != null)
+                GamingEnvironment.Instance.SaveBoardGame("XML/" + Configuration.Instance.CurrentPath);
+
+            else
+            {
+                Random rnd = new Random();
+                int numberRandom = rnd.Next(999999);
+
+                string path = Configuration.Instance.CurrentSimulator + "_" + numberRandom.ToString() + ".xml";
+                GamingEnvironment.Instance.SaveBoardGame("XML/" + path);
+                Configuration.Instance.CurrentPath = path;
+                RecentFileList.InsertFile(Configuration.Instance.CurrentPath);
+            }
         }
     }
 }

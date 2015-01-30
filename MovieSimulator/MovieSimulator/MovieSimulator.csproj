@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\BoardGame\Characters\Team\TeamAbstract.cs" />
+    <Compile Include="Common\BoardGame\Utils\RecentFileList.cs" />
     <Compile Include="HungerGames\Characters\HungerGameCharacterAbstract.cs" />
     <Compile Include="PrisonBreak\Area\Door.cs" />
     <Compile Include="PrisonBreak\Area\Grid.cs" />

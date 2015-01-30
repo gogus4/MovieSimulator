@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using MovieSimulator.Common.BoardGame.Characters;
 using MovieSimulator.Common.BoardGame.Observer;
 using MovieSimulator.Common.BoardGame.Characters.Decorator;
+using System.Xml.Linq;
+using MovieSimulator.Common.BoardGame.Utils;
+using System.Reflection;
+using System.Xml;
 
 namespace MovieSimulator.Common.BoardGame
 {
