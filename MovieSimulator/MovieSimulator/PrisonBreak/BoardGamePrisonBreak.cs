@@ -35,7 +35,7 @@ namespace MovieSimulator.PrisonBreak
 
         private void placeCharacters()
         {
-            this.AddCharacter(new LincolnBurrows());
+            this.AddCharacter(new LincolnBurrows(1, 1));
             this.AddCharacter(new MichaelScofield(0, 1));
             this.AddCharacter(new Guard(19, 8));
             this.AddCharacter(new Guard(10, 10));

@@ -60,6 +60,7 @@
     <Compile Include="HungerGames\Characters\HungerGameCharacterAbstract.cs" />
     <Compile Include="HungerGames\Characters\FinnickOdair.cs" />
     <Compile Include="HungerGames\Characters\GaleHawthorne.cs" />
+    <Compile Include="HungerGames\Strategy\StrategyFightWithSword.cs" />
     <Compile Include="PrisonBreak\Area\Door.cs" />
     <Compile Include="PrisonBreak\Area\Grid.cs" />
     <Compile Include="PrisonBreak\Area\Ground.cs" />

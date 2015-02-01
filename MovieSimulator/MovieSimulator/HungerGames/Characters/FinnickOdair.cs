@@ -28,7 +28,7 @@ namespace MovieSimulator.HungerGames.Characters
         public void Init()
         {
             command = new CommandUpdateCharacter();
-            strategyFight = new StrategyFightWithBow();
+            strategyFight = new StrategyFightWithSword();
             name = "Finnick Odair";
             team = null;
         }

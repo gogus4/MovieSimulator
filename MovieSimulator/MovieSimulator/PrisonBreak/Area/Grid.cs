@@ -13,6 +13,7 @@ namespace MovieSimulator.PrisonBreak.Area
         public Grid()
         {
             Color = Brushes.Gray;
+            isAccessible = false;
         }
     }
 }
