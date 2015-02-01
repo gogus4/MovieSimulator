@@ -2,15 +2,10 @@
 
 <!--
 Types :
+Door : Marron Le personnage peut y accéder
+Grid : Gris : Le personnage peut y accéder
+Ground : Blanc  : Le personnage peut y accéder
 Wall : Noir Le personnage ne peut pas y accéder
-Door : Marron Le personnage peut y accéder avec une clé
-Bar : Gris : Le personnage peut y accéder
-Containment : Gris claire : Le personnage peut y accéder
-RoadGuard : Blanc : Le personnage peut y accéder
-Guardhouse : Jaune : Le personnage peut y accéder
-Court : Vert : Le personnage peut y accéder
-OutSide : Orange : Le personnage peut y accéder
-Escape : Rouge : Le personnage peut y accéder
 -->
 
 <boardgame>
@@ -36,36 +31,36 @@ Escape : Rouge : Le personnage peut y accéder
     <area x="0" y="18" type="Wall" />
     <area x="0" y="19" type="Wall" />
     <area x="1" y="0" type="Wall" />
-    <area x="1" y="1" type="Containment" />
-    <area x="1" y="2" type="Containment" />
-    <area x="1" y="3" type="Containment" />
-    <area x="1" y="4" type="Containment" />
-    <area x="1" y="5" type="Containment" />
-    <area x="1" y="6" type="Containment" />
-    <area x="1" y="7" type="Containment" />
-    <area x="1" y="8" type="Containment" />
-    <area x="1" y="9" type="Bar" />
-    <area x="1" y="10" type="RoadGuard" />
-    <area x="1" y="11" type="RoadGuard" />
-    <area x="1" y="12" type="RoadGuard" />
-    <area x="1" y="13" type="RoadGuard" />
-    <area x="1" y="14" type="RoadGuard" />
-    <area x="1" y="15" type="RoadGuard" />
-    <area x="1" y="16" type="RoadGuard" />
-    <area x="1" y="17" type="RoadGuard" />
-    <area x="1" y="18" type="RoadGuard" />
+    <area x="1" y="1" type="Ground" />
+    <area x="1" y="2" type="Ground" />
+    <area x="1" y="3" type="Ground" />
+    <area x="1" y="4" type="Ground" />
+    <area x="1" y="5" type="Ground" />
+    <area x="1" y="6" type="Ground" />
+    <area x="1" y="7" type="Ground" />
+    <area x="1" y="8" type="Ground" />
+    <area x="1" y="9" type="Grid" />
+    <area x="1" y="10" type="Ground" />
+    <area x="1" y="11" type="Ground" />
+    <area x="1" y="12" type="Ground" />
+    <area x="1" y="13" type="Ground" />
+    <area x="1" y="14" type="Ground" />
+    <area x="1" y="15" type="Ground" />
+    <area x="1" y="16" type="Ground" />
+    <area x="1" y="17" type="Ground" />
+    <area x="1" y="18" type="Ground" />
     <area x="1" y="19" type="Wall" />
     <area x="2" y="0" type="Wall" />
-    <area x="2" y="1" type="Containment" />
-    <area x="2" y="2" type="Containment" />
-    <area x="2" y="3" type="Containment" />
-    <area x="2" y="4" type="Containment" />
-    <area x="2" y="5" type="Containment" />
-    <area x="2" y="6" type="Containment" />
-    <area x="2" y="7" type="Containment" />
-    <area x="2" y="8" type="Containment" />
-    <area x="2" y="9" type="Bar" />
-    <area x="2" y="10" type="RoadGuard" />
+    <area x="2" y="1" type="Ground" />
+    <area x="2" y="2" type="Ground" />
+    <area x="2" y="3" type="Ground" />
+    <area x="2" y="4" type="Ground" />
+    <area x="2" y="5" type="Ground" />
+    <area x="2" y="6" type="Ground" />
+    <area x="2" y="7" type="Ground" />
+    <area x="2" y="8" type="Ground" />
+    <area x="2" y="9" type="Grid" />
+    <area x="2" y="10" type="Ground" />
     <area x="2" y="11" type="Wall" />
     <area x="2" y="12" type="Wall" />
     <area x="2" y="13" type="Wall" />
@@ -73,47 +68,47 @@ Escape : Rouge : Le personnage peut y accéder
     <area x="2" y="15" type="Wall" />
     <area x="2" y="16" type="Wall" />
     <area x="2" y="17" type="Wall" />
-    <area x="2" y="18" type="RoadGuard" />
+    <area x="2" y="18" type="Ground" />
     <area x="2" y="19" type="Wall" />
     <area x="3" y="0" type="Wall" />
-    <area x="3" y="1" type="Bar" />
-    <area x="3" y="2" type="Bar" />
-    <area x="3" y="3" type="Bar" />
-    <area x="3" y="4" type="Bar" />
-    <area x="3" y="5" type="Bar" />
-    <area x="3" y="6" type="Bar" />
-    <area x="3" y="7" type="Bar" />
+    <area x="3" y="1" type="Grid" />
+    <area x="3" y="2" type="Grid" />
+    <area x="3" y="3" type="Grid" />
+    <area x="3" y="4" type="Grid" />
+    <area x="3" y="5" type="Grid" />
+    <area x="3" y="6" type="Grid" />
+    <area x="3" y="7" type="Grid" />
     <area x="3" y="8" type="Door" />
-    <area x="3" y="9" type="Bar" />
-    <area x="3" y="10" type="RoadGuard" />
+    <area x="3" y="9" type="Grid" />
+    <area x="3" y="10" type="Ground" />
     <area x="3" y="11" type="Wall" />
-    <area x="3" y="12" type="Guardhouse" />
-    <area x="3" y="13" type="Guardhouse" />
-    <area x="3" y="14" type="Guardhouse" />
-    <area x="3" y="15" type="Guardhouse" />
-    <area x="3" y="16" type="Guardhouse" />
+    <area x="3" y="12" type="Ground" />
+    <area x="3" y="13" type="Ground" />
+    <area x="3" y="14" type="Ground" />
+    <area x="3" y="15" type="Ground" />
+    <area x="3" y="16" type="Ground" />
     <area x="3" y="17" type="Door" />
-    <area x="3" y="18" type="RoadGuard" />
+    <area x="3" y="18" type="Ground" />
     <area x="3" y="19" type="Wall" />
     <area x="4" y="0" type="Wall" />
-    <area x="4" y="1" type="RoadGuard" />
-    <area x="4" y="2" type="RoadGuard" />
-    <area x="4" y="3" type="RoadGuard" />
-    <area x="4" y="4" type="RoadGuard" />
-    <area x="4" y="5" type="RoadGuard" />
-    <area x="4" y="6" type="RoadGuard" />
-    <area x="4" y="7" type="RoadGuard" />
-    <area x="4" y="8" type="RoadGuard" />
-    <area x="4" y="9" type="RoadGuard" />
-    <area x="4" y="10" type="RoadGuard" />
+    <area x="4" y="1" type="Ground" />
+    <area x="4" y="2" type="Ground" />
+    <area x="4" y="3" type="Ground" />
+    <area x="4" y="4" type="Ground" />
+    <area x="4" y="5" type="Ground" />
+    <area x="4" y="6" type="Ground" />
+    <area x="4" y="7" type="Ground" />
+    <area x="4" y="8" type="Ground" />
+    <area x="4" y="9" type="Ground" />
+    <area x="4" y="10" type="Ground" />
     <area x="4" y="11" type="Wall" />
-    <area x="4" y="12" type="Guardhouse" />
-    <area x="4" y="13" type="Guardhouse" />
-    <area x="4" y="14" type="Guardhouse" />
-    <area x="4" y="15" type="Guardhouse" />
-    <area x="4" y="16" type="Guardhouse" />
+    <area x="4" y="12" type="Ground" />
+    <area x="4" y="13" type="Ground" />
+    <area x="4" y="14" type="Ground" />
+    <area x="4" y="15" type="Ground" />
+    <area x="4" y="16" type="Ground" />
     <area x="4" y="17" type="Wall" />
-    <area x="4" y="18" type="RoadGuard" />
+    <area x="4" y="18" type="Ground" />
     <area x="4" y="19" type="Wall" />
     <area x="5" y="0" type="Wall" />
     <area x="5" y="1" type="Wall" />
@@ -127,45 +122,45 @@ Escape : Rouge : Le personnage peut y accéder
     <area x="5" y="9" type="Wall" />
     <area x="5" y="10" type="Wall" />
     <area x="5" y="11" type="Wall" />
-    <area x="5" y="12" type="Guardhouse" />
-    <area x="5" y="13" type="Guardhouse" />
-    <area x="5" y="14" type="Guardhouse" />
-    <area x="5" y="15" type="Guardhouse" />
-    <area x="5" y="16" type="Guardhouse" />
+    <area x="5" y="12" type="Ground" />
+    <area x="5" y="13" type="Ground" />
+    <area x="5" y="14" type="Ground" />
+    <area x="5" y="15" type="Ground" />
+    <area x="5" y="16" type="Ground" />
     <area x="5" y="17" type="Wall" />
-    <area x="5" y="18" type="RoadGuard" />
+    <area x="5" y="18" type="Ground" />
     <area x="5" y="19" type="Wall" />
-    <area x="6" y="0" type="OutSide" />
-    <area x="6" y="1" type="OutSide" />
-    <area x="6" y="2" type="OutSide" />
-    <area x="6" y="3" type="OutSide" />
-    <area x="6" y="4" type="OutSide" />
-    <area x="6" y="5" type="OutSide" />
+    <area x="6" y="0" type="Ground" />
+    <area x="6" y="1" type="Ground" />
+    <area x="6" y="2" type="Ground" />
+    <area x="6" y="3" type="Ground" />
+    <area x="6" y="4" type="Ground" />
+    <area x="6" y="5" type="Ground" />
     <area x="6" y="6" type="Wall" />
-    <area x="6" y="7" type="Court" />
-    <area x="6" y="8" type="Court" />
-    <area x="6" y="9" type="Court" />
-    <area x="6" y="10" type="Court" />
+    <area x="6" y="7" type="Ground" />
+    <area x="6" y="8" type="Ground" />
+    <area x="6" y="9" type="Ground" />
+    <area x="6" y="10" type="Ground" />
     <area x="6" y="11" type="Wall" />
-    <area x="6" y="12" type="Guardhouse" />
-    <area x="6" y="13" type="Guardhouse" />
-    <area x="6" y="14" type="Guardhouse" />
-    <area x="6" y="15" type="Guardhouse" />
-    <area x="6" y="16" type="Guardhouse" />
+    <area x="6" y="12" type="Ground" />
+    <area x="6" y="13" type="Ground" />
+    <area x="6" y="14" type="Ground" />
+    <area x="6" y="15" type="Ground" />
+    <area x="6" y="16" type="Ground" />
     <area x="6" y="17" type="Wall" />
-    <area x="6" y="18" type="RoadGuard" />
+    <area x="6" y="18" type="Ground" />
     <area x="6" y="19" type="Wall" />
-    <area x="7" y="0" type="OutSide" />
-    <area x="7" y="1" type="OutSide" />
-    <area x="7" y="2" type="OutSide" />
-    <area x="7" y="3" type="OutSide" />
-    <area x="7" y="4" type="OutSide" />
-    <area x="7" y="5" type="OutSide" />
+    <area x="7" y="0" type="Ground" />
+    <area x="7" y="1" type="Ground" />
+    <area x="7" y="2" type="Ground" />
+    <area x="7" y="3" type="Ground" />
+    <area x="7" y="4" type="Ground" />
+    <area x="7" y="5" type="Ground" />
     <area x="7" y="6" type="Wall" />
-    <area x="7" y="7" type="Court" />
-    <area x="7" y="8" type="Court" />
-    <area x="7" y="9" type="Court" />
-    <area x="7" y="10" type="Court" />
+    <area x="7" y="7" type="Ground" />
+    <area x="7" y="8" type="Ground" />
+    <area x="7" y="9" type="Ground" />
+    <area x="7" y="10" type="Ground" />
     <area x="7" y="11" type="Wall" />
     <area x="7" y="12" type="Door" />
     <area x="7" y="13" type="Wall" />
@@ -175,225 +170,225 @@ Escape : Rouge : Le personnage peut y accéder
     <area x="7" y="17" type="Wall" />
     <area x="7" y="18" type="Wall" />
     <area x="7" y="19" type="Wall" />
-    <area x="8" y="0" type="OutSide" />
-    <area x="8" y="1" type="OutSide" />
-    <area x="8" y="2" type="OutSide" />
-    <area x="8" y="3" type="OutSide" />
-    <area x="8" y="4" type="OutSide" />
-    <area x="8" y="5" type="OutSide" />
+    <area x="8" y="0" type="Ground" />
+    <area x="8" y="1" type="Ground" />
+    <area x="8" y="2" type="Ground" />
+    <area x="8" y="3" type="Ground" />
+    <area x="8" y="4" type="Ground" />
+    <area x="8" y="5" type="Ground" />
     <area x="8" y="6" type="Wall" />
-    <area x="8" y="7" type="Court" />
-    <area x="8" y="8" type="Court" />
-    <area x="8" y="9" type="Court" />
-    <area x="8" y="10" type="Court" />
+    <area x="8" y="7" type="Ground" />
+    <area x="8" y="8" type="Ground" />
+    <area x="8" y="9" type="Ground" />
+    <area x="8" y="10" type="Ground" />
     <area x="8" y="11" type="Wall" />
-    <area x="8" y="12" type="Court" />
+    <area x="8" y="12" type="Ground" />
     <area x="8" y="13" type="Wall" />
-    <area x="8" y="14" type="Court" />
-    <area x="8" y="15" type="Court" />
-    <area x="8" y="16" type="Court" />
-    <area x="8" y="17" type="Court" />
-    <area x="8" y="18" type="Court" />
+    <area x="8" y="14" type="Ground" />
+    <area x="8" y="15" type="Ground" />
+    <area x="8" y="16" type="Ground" />
+    <area x="8" y="17" type="Ground" />
+    <area x="8" y="18" type="Ground" />
     <area x="8" y="19" type="Wall" />
-    <area x="9" y="0" type="OutSide" />
-    <area x="9" y="1" type="OutSide" />
-    <area x="9" y="2" type="OutSide" />
-    <area x="9" y="3" type="OutSide" />
-    <area x="9" y="4" type="OutSide" />
-    <area x="9" y="5" type="OutSide" />
+    <area x="9" y="0" type="Ground" />
+    <area x="9" y="1" type="Ground" />
+    <area x="9" y="2" type="Ground" />
+    <area x="9" y="3" type="Ground" />
+    <area x="9" y="4" type="Ground" />
+    <area x="9" y="5" type="Ground" />
     <area x="9" y="6" type="Wall" />
-    <area x="9" y="7" type="Court" />
-    <area x="9" y="8" type="Court" />
-    <area x="9" y="9" type="Court" />
-    <area x="9" y="10" type="Court" />
+    <area x="9" y="7" type="Ground" />
+    <area x="9" y="8" type="Ground" />
+    <area x="9" y="9" type="Ground" />
+    <area x="9" y="10" type="Ground" />
     <area x="9" y="11" type="Wall" />
-    <area x="9" y="12" type="Court" />
+    <area x="9" y="12" type="Ground" />
     <area x="9" y="13" type="Wall" />
-    <area x="9" y="14" type="Court" />
-    <area x="9" y="15" type="Court" />
-    <area x="9" y="16" type="Court" />
-    <area x="9" y="17" type="Court" />
-    <area x="9" y="18" type="Court" />
+    <area x="9" y="14" type="Ground" />
+    <area x="9" y="15" type="Ground" />
+    <area x="9" y="16" type="Ground" />
+    <area x="9" y="17" type="Ground" />
+    <area x="9" y="18" type="Ground" />
     <area x="9" y="19" type="Wall" />
-    <area x="10" y="0" type="OutSide" />
-    <area x="10" y="1" type="OutSide" />
-    <area x="10" y="2" type="OutSide" />
-    <area x="10" y="3" type="OutSide" />
-    <area x="10" y="4" type="OutSide" />
-    <area x="10" y="5" type="OutSide" />
+    <area x="10" y="0" type="Ground" />
+    <area x="10" y="1" type="Ground" />
+    <area x="10" y="2" type="Ground" />
+    <area x="10" y="3" type="Ground" />
+    <area x="10" y="4" type="Ground" />
+    <area x="10" y="5" type="Ground" />
     <area x="10" y="6" type="Wall" />
-    <area x="10" y="7" type="Court" />
-    <area x="10" y="8" type="Court" />
-    <area x="10" y="9" type="Court" />
-    <area x="10" y="10" type="Court" />
+    <area x="10" y="7" type="Ground" />
+    <area x="10" y="8" type="Ground" />
+    <area x="10" y="9" type="Ground" />
+    <area x="10" y="10" type="Ground" />
     <area x="10" y="11" type="Wall" />
     <area x="10" y="12" type="Door" />
     <area x="10" y="13" type="Wall" />
-    <area x="10" y="14" type="Court" />
-    <area x="10" y="15" type="Court" />
-    <area x="10" y="16" type="Court" />
-    <area x="10" y="17" type="Court" />
-    <area x="10" y="18" type="Court" />
+    <area x="10" y="14" type="Ground" />
+    <area x="10" y="15" type="Ground" />
+    <area x="10" y="16" type="Ground" />
+    <area x="10" y="17" type="Ground" />
+    <area x="10" y="18" type="Ground" />
     <area x="10" y="19" type="Wall" />
-    <area x="11" y="0" type="Escape" />
-    <area x="11" y="1" type="Escape" />
-    <area x="11" y="2" type="OutSide" />
-    <area x="11" y="3" type="OutSide" />
-    <area x="11" y="4" type="OutSide" />
-    <area x="11" y="5" type="OutSide" />
+    <area x="11" y="0" type="Ground" />
+    <area x="11" y="1" type="Ground" />
+    <area x="11" y="2" type="Ground" />
+    <area x="11" y="3" type="Ground" />
+    <area x="11" y="4" type="Ground" />
+    <area x="11" y="5" type="Ground" />
     <area x="11" y="6" type="Wall" />
-    <area x="11" y="7" type="Court" />
-    <area x="11" y="8" type="Court" />
-    <area x="11" y="9" type="Court" />
-    <area x="11" y="10" type="Court" />
-    <area x="11" y="11" type="Court" />
-    <area x="11" y="12" type="Court" />
-    <area x="11" y="13" type="Court" />
-    <area x="11" y="14" type="Court" />
-    <area x="11" y="15" type="Court" />
-    <area x="11" y="16" type="Court" />
-    <area x="11" y="17" type="Court" />
-    <area x="11" y="18" type="Court" />
+    <area x="11" y="7" type="Ground" />
+    <area x="11" y="8" type="Ground" />
+    <area x="11" y="9" type="Ground" />
+    <area x="11" y="10" type="Ground" />
+    <area x="11" y="11" type="Ground" />
+    <area x="11" y="12" type="Ground" />
+    <area x="11" y="13" type="Ground" />
+    <area x="11" y="14" type="Ground" />
+    <area x="11" y="15" type="Ground" />
+    <area x="11" y="16" type="Ground" />
+    <area x="11" y="17" type="Ground" />
+    <area x="11" y="18" type="Ground" />
     <area x="11" y="19" type="Wall" />
-    <area x="12" y="0" type="Escape" />
-    <area x="12" y="1" type="Escape" />
-    <area x="12" y="2" type="OutSide" />
-    <area x="12" y="3" type="OutSide" />
-    <area x="12" y="4" type="OutSide" />
-    <area x="12" y="5" type="OutSide" />
+    <area x="12" y="0" type="Ground" />
+    <area x="12" y="1" type="Ground" />
+    <area x="12" y="2" type="Ground" />
+    <area x="12" y="3" type="Ground" />
+    <area x="12" y="4" type="Ground" />
+    <area x="12" y="5" type="Ground" />
     <area x="12" y="6" type="Door" />
-    <area x="12" y="7" type="Court" />
-    <area x="12" y="8" type="Court" />
-    <area x="12" y="9" type="Court" />
-    <area x="12" y="10" type="Court" />
-    <area x="12" y="11" type="Court" />
-    <area x="12" y="12" type="Court" />
-    <area x="12" y="13" type="Court" />
-    <area x="12" y="14" type="Court" />
-    <area x="12" y="15" type="Court" />
-    <area x="12" y="16" type="Court" />
-    <area x="12" y="17" type="Court" />
-    <area x="12" y="18" type="Court" />
+    <area x="12" y="7" type="Ground" />
+    <area x="12" y="8" type="Ground" />
+    <area x="12" y="9" type="Ground" />
+    <area x="12" y="10" type="Ground" />
+    <area x="12" y="11" type="Ground" />
+    <area x="12" y="12" type="Ground" />
+    <area x="12" y="13" type="Ground" />
+    <area x="12" y="14" type="Ground" />
+    <area x="12" y="15" type="Ground" />
+    <area x="12" y="16" type="Ground" />
+    <area x="12" y="17" type="Ground" />
+    <area x="12" y="18" type="Ground" />
     <area x="12" y="19" type="Wall" />
-    <area x="13" y="0" type="Escape" />
-    <area x="13" y="1" type="Escape" />
-    <area x="13" y="2" type="OutSide" />
-    <area x="13" y="3" type="OutSide" />
-    <area x="13" y="4" type="OutSide" />
-    <area x="13" y="5" type="OutSide" />
+    <area x="13" y="0" type="Ground" />
+    <area x="13" y="1" type="Ground" />
+    <area x="13" y="2" type="Ground" />
+    <area x="13" y="3" type="Ground" />
+    <area x="13" y="4" type="Ground" />
+    <area x="13" y="5" type="Ground" />
     <area x="13" y="6" type="Door" />
-    <area x="13" y="7" type="Court" />
-    <area x="13" y="8" type="Court" />
-    <area x="13" y="9" type="Court" />
-    <area x="13" y="10" type="Court" />
-    <area x="13" y="11" type="Court" />
-    <area x="13" y="12" type="Court" />
-    <area x="13" y="13" type="Court" />
-    <area x="13" y="14" type="Court" />
-    <area x="13" y="15" type="Court" />
-    <area x="13" y="16" type="Court" />
-    <area x="13" y="17" type="Court" />
-    <area x="13" y="18" type="Court" />
+    <area x="13" y="7" type="Ground" />
+    <area x="13" y="8" type="Ground" />
+    <area x="13" y="9" type="Ground" />
+    <area x="13" y="10" type="Ground" />
+    <area x="13" y="11" type="Ground" />
+    <area x="13" y="12" type="Ground" />
+    <area x="13" y="13" type="Ground" />
+    <area x="13" y="14" type="Ground" />
+    <area x="13" y="15" type="Ground" />
+    <area x="13" y="16" type="Ground" />
+    <area x="13" y="17" type="Ground" />
+    <area x="13" y="18" type="Ground" />
     <area x="13" y="19" type="Wall" />
-    <area x="14" y="0" type="Escape" />
-    <area x="14" y="1" type="Escape" />
-    <area x="14" y="2" type="OutSide" />
-    <area x="14" y="3" type="OutSide" />
-    <area x="14" y="4" type="OutSide" />
-    <area x="14" y="5" type="OutSide" />
+    <area x="14" y="0" type="Ground" />
+    <area x="14" y="1" type="Ground" />
+    <area x="14" y="2" type="Ground" />
+    <area x="14" y="3" type="Ground" />
+    <area x="14" y="4" type="Ground" />
+    <area x="14" y="5" type="Ground" />
     <area x="14" y="6" type="Wall" />
-    <area x="14" y="7" type="Court" />
-    <area x="14" y="8" type="Court" />
-    <area x="14" y="9" type="Court" />
-    <area x="14" y="10" type="Court" />
-    <area x="14" y="11" type="Court" />
-    <area x="14" y="12" type="Court" />
-    <area x="14" y="13" type="Court" />
-    <area x="14" y="14" type="Court" />
-    <area x="14" y="15" type="Court" />
-    <area x="14" y="16" type="Court" />
-    <area x="14" y="17" type="Court" />
-    <area x="14" y="18" type="Court" />
+    <area x="14" y="7" type="Ground" />
+    <area x="14" y="8" type="Ground" />
+    <area x="14" y="9" type="Ground" />
+    <area x="14" y="10" type="Ground" />
+    <area x="14" y="11" type="Ground" />
+    <area x="14" y="12" type="Ground" />
+    <area x="14" y="13" type="Ground" />
+    <area x="14" y="14" type="Ground" />
+    <area x="14" y="15" type="Ground" />
+    <area x="14" y="16" type="Ground" />
+    <area x="14" y="17" type="Ground" />
+    <area x="14" y="18" type="Ground" />
     <area x="14" y="19" type="Wall" />
-    <area x="15" y="0" type="OutSide" />
-    <area x="15" y="1" type="OutSide" />
-    <area x="15" y="2" type="OutSide" />
-    <area x="15" y="3" type="OutSide" />
-    <area x="15" y="4" type="OutSide" />
-    <area x="15" y="5" type="OutSide" />
+    <area x="15" y="0" type="Ground" />
+    <area x="15" y="1" type="Ground" />
+    <area x="15" y="2" type="Ground" />
+    <area x="15" y="3" type="Ground" />
+    <area x="15" y="4" type="Ground" />
+    <area x="15" y="5" type="Ground" />
     <area x="15" y="6" type="Wall" />
-    <area x="15" y="7" type="Court" />
-    <area x="15" y="8" type="Court" />
-    <area x="15" y="9" type="Court" />
-    <area x="15" y="10" type="Court" />
-    <area x="15" y="11" type="Court" />
-    <area x="15" y="12" type="Court" />
-    <area x="15" y="13" type="Court" />
-    <area x="15" y="14" type="Court" />
-    <area x="15" y="15" type="Court" />
-    <area x="15" y="16" type="Court" />
-    <area x="15" y="17" type="Court" />
-    <area x="15" y="18" type="Court" />
+    <area x="15" y="7" type="Ground" />
+    <area x="15" y="8" type="Ground" />
+    <area x="15" y="9" type="Ground" />
+    <area x="15" y="10" type="Ground" />
+    <area x="15" y="11" type="Ground" />
+    <area x="15" y="12" type="Ground" />
+    <area x="15" y="13" type="Ground" />
+    <area x="15" y="14" type="Ground" />
+    <area x="15" y="15" type="Ground" />
+    <area x="15" y="16" type="Ground" />
+    <area x="15" y="17" type="Ground" />
+    <area x="15" y="18" type="Ground" />
     <area x="15" y="19" type="Wall" />
-    <area x="16" y="0" type="OutSide" />
-    <area x="16" y="1" type="OutSide" />
-    <area x="16" y="2" type="OutSide" />
-    <area x="16" y="3" type="OutSide" />
-    <area x="16" y="4" type="OutSide" />
-    <area x="16" y="5" type="OutSide" />
+    <area x="16" y="0" type="Ground" />
+    <area x="16" y="1" type="Ground" />
+    <area x="16" y="2" type="Ground" />
+    <area x="16" y="3" type="Ground" />
+    <area x="16" y="4" type="Ground" />
+    <area x="16" y="5" type="Ground" />
     <area x="16" y="6" type="Wall" />
-    <area x="16" y="7" type="Court" />
-    <area x="16" y="8" type="Court" />
-    <area x="16" y="9" type="Court" />
-    <area x="16" y="10" type="Court" />
-    <area x="16" y="11" type="Court" />
-    <area x="16" y="12" type="Court" />
-    <area x="16" y="13" type="Court" />
-    <area x="16" y="14" type="Court" />
-    <area x="16" y="15" type="Court" />
-    <area x="16" y="16" type="Court" />
-    <area x="16" y="17" type="Court" />
-    <area x="16" y="18" type="Court" />
+    <area x="16" y="7" type="Ground" />
+    <area x="16" y="8" type="Ground" />
+    <area x="16" y="9" type="Ground" />
+    <area x="16" y="10" type="Ground" />
+    <area x="16" y="11" type="Ground" />
+    <area x="16" y="12" type="Ground" />
+    <area x="16" y="13" type="Ground" />
+    <area x="16" y="14" type="Ground" />
+    <area x="16" y="15" type="Ground" />
+    <area x="16" y="16" type="Ground" />
+    <area x="16" y="17" type="Ground" />
+    <area x="16" y="18" type="Ground" />
     <area x="16" y="19" type="Wall" />
-    <area x="17" y="0" type="OutSide" />
-    <area x="17" y="1" type="OutSide" />
-    <area x="17" y="2" type="OutSide" />
-    <area x="17" y="3" type="OutSide" />
-    <area x="17" y="4" type="OutSide" />
-    <area x="17" y="5" type="OutSide" />
+    <area x="17" y="0" type="Ground" />
+    <area x="17" y="1" type="Ground" />
+    <area x="17" y="2" type="Ground" />
+    <area x="17" y="3" type="Ground" />
+    <area x="17" y="4" type="Ground" />
+    <area x="17" y="5" type="Ground" />
     <area x="17" y="6" type="Wall" />
-    <area x="17" y="7" type="Court" />
-    <area x="17" y="8" type="Court" />
-    <area x="17" y="9" type="Court" />
-    <area x="17" y="10" type="Court" />
-    <area x="17" y="11" type="Court" />
-    <area x="17" y="12" type="Court" />
-    <area x="17" y="13" type="Court" />
-    <area x="17" y="14" type="Court" />
-    <area x="17" y="15" type="Court" />
-    <area x="17" y="16" type="Court" />
-    <area x="17" y="17" type="Court" />
-    <area x="17" y="18" type="Court" />
+    <area x="17" y="7" type="Ground" />
+    <area x="17" y="8" type="Ground" />
+    <area x="17" y="9" type="Ground" />
+    <area x="17" y="10" type="Ground" />
+    <area x="17" y="11" type="Ground" />
+    <area x="17" y="12" type="Ground" />
+    <area x="17" y="13" type="Ground" />
+    <area x="17" y="14" type="Ground" />
+    <area x="17" y="15" type="Ground" />
+    <area x="17" y="16" type="Ground" />
+    <area x="17" y="17" type="Ground" />
+    <area x="17" y="18" type="Ground" />
     <area x="17" y="19" type="Wall" />
-    <area x="18" y="0" type="OutSide" />
-    <area x="18" y="1" type="OutSide" />
-    <area x="18" y="2" type="OutSide" />
-    <area x="18" y="3" type="OutSide" />
-    <area x="18" y="4" type="OutSide" />
-    <area x="18" y="5" type="OutSide" />
+    <area x="18" y="0" type="Ground" />
+    <area x="18" y="1" type="Ground" />
+    <area x="18" y="2" type="Ground" />
+    <area x="18" y="3" type="Ground" />
+    <area x="18" y="4" type="Ground" />
+    <area x="18" y="5" type="Ground" />
     <area x="18" y="6" type="Wall" />
-    <area x="18" y="7" type="Court" />
-    <area x="18" y="8" type="Court" />
-    <area x="18" y="9" type="Court" />
-    <area x="18" y="10" type="Court" />
-    <area x="18" y="11" type="Court" />
-    <area x="18" y="12" type="Court" />
-    <area x="18" y="13" type="Court" />
-    <area x="18" y="14" type="Court" />
-    <area x="18" y="15" type="Court" />
-    <area x="18" y="16" type="Court" />
-    <area x="18" y="17" type="Court" />
-    <area x="18" y="18" type="Court" />
+    <area x="18" y="7" type="Ground" />
+    <area x="18" y="8" type="Ground" />
+    <area x="18" y="9" type="Ground" />
+    <area x="18" y="10" type="Ground" />
+    <area x="18" y="11" type="Ground" />
+    <area x="18" y="12" type="Ground" />
+    <area x="18" y="13" type="Ground" />
+    <area x="18" y="14" type="Ground" />
+    <area x="18" y="15" type="Ground" />
+    <area x="18" y="16" type="Ground" />
+    <area x="18" y="17" type="Ground" />
+    <area x="18" y="18" type="Ground" />
     <area x="18" y="19" type="Wall" />
     <area x="19" y="0" type="Wall" />
     <area x="19" y="1" type="Wall" />
