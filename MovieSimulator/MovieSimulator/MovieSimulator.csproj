@@ -58,6 +58,8 @@
     <Compile Include="Common\BoardGame\Characters\Team\TeamAbstract.cs" />
     <Compile Include="Common\BoardGame\Utils\RecentFileList.cs" />
     <Compile Include="HungerGames\Characters\HungerGameCharacterAbstract.cs" />
+    <Compile Include="HungerGames\Characters\FinnickOdair.cs" />
+    <Compile Include="HungerGames\Characters\GaleHawthorne.cs" />
     <Compile Include="PrisonBreak\Area\Door.cs" />
     <Compile Include="PrisonBreak\Area\Grid.cs" />
     <Compile Include="PrisonBreak\Area\Ground.cs" />
@@ -202,6 +204,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="XML\HungerGames.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\PrisonBreak.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XML\StarWars.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

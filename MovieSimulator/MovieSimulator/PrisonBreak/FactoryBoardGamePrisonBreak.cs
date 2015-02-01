@@ -60,7 +60,9 @@ namespace MovieSimulator.PrisonBreak
 
             //LoadBoardGame("HungerGames_23.01.2015.xml");
 
-            CreateAreas();
+            FillBoardGame("XML/PrisonBreak.xml");
+
+            // CreateAreas();
 
             // SaveBoardGame("toto");
 

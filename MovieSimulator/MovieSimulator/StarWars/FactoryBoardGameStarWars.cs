@@ -60,7 +60,8 @@ namespace MovieSimulator.StarWars
 
             //LoadBoardGame("HungerGames_23.01.2015.xml");
 
-            CreateAreas();
+            FillBoardGame("XML/StarWars.xml");
+            //CreateAreas();
 
             // SaveBoardGame("toto");
 
