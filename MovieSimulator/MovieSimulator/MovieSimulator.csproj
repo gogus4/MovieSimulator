@@ -69,12 +69,14 @@
     <Compile Include="PrisonBreak\Characters\Decorator\InjuryDecorator.cs" />
     <Compile Include="PrisonBreak\Characters\Decorator\HasKey.cs" />
     <Compile Include="PrisonBreak\Characters\Decorator\TruncheonBlowDecorator.cs" />
+    <Compile Include="PrisonBreak\Characters\PrisonBreakCharacterAbstract.cs" />
     <Compile Include="PrisonBreak\Characters\Guard.cs" />
     <Compile Include="PrisonBreak\Characters\LincolnBurrows.cs" />
     <Compile Include="PrisonBreak\Characters\MichaelScofield.cs" />
     <Compile Include="PrisonBreak\Characters\Team\GuardTeam.cs" />
     <Compile Include="PrisonBreak\Characters\Team\LincolnTeam.cs" />
     <Compile Include="PrisonBreak\FactoryBoardGamePrisonBreak.cs" />
+    <Compile Include="PrisonBreak\Strategy\StrategyFightForTheKey.cs" />
     <Compile Include="PrisonBreak\Strategy\StrategyFightWithFist.cs" />
     <Compile Include="PrisonBreak\Strategy\StrategyFightWithScrewdriver.cs" />
     <Compile Include="PrisonBreak\Strategy\StrategyFightWithTruncheon.cs" />

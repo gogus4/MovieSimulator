@@ -11,6 +11,7 @@ using MovieSimulator.Common.BoardGame.Area;
 using MovieSimulator.Common.BoardGame.Characters.Decorator;
 using MovieSimulator.PrisonBreak.Characters.Decorator;
 using MovieSimulator.PrisonBreak.Strategy;
+using MovieSimulator.PrisonBreak.Characters.Team;
 
 namespace MovieSimulator.PrisonBreak
 {
@@ -37,7 +38,7 @@ namespace MovieSimulator.PrisonBreak
         {
             this.AddCharacter(new LincolnBurrows(1, 1));
             this.AddCharacter(new MichaelScofield(0, 1));
-            this.AddCharacter(new Guard(19, 8));
+            this.AddCharacter(new Guard(4, 9));
             this.AddCharacter(new Guard(10, 10));
             this.AddCharacter(new Guard(8, 18));
         }
@@ -72,13 +73,21 @@ namespace MovieSimulator.PrisonBreak
 
         public override void SetOrganisationFightDecorator(Character character, Character toAttack)
         {
-            if (toAttack.hp <= 0)
+            if (character.strategyFight.GetType().Equals(typeof(StrategyFightForTheKey)))
             {
-                if (toAttack.GetType().Equals(typeof(Guard)))
+                character.AddDecoratorToDoMyReport(new HasKey());
+
+                foreach (Character gangster in characters.Where(x => x.team.GetType().Equals(typeof(LincolnTeam))))
                 {
-                    character.AddDecoratorToDoMyReport(new HasKey());
+                    if(gangster.GetType().Equals(typeof(PrisonBreakCharacterAbstract))){
+                        ((PrisonBreakCharacterAbstract)gangster).hasKey = true;
+                        gangster.strategyFight = new StrategyFightWithScrewdriver();
+                    }
                 }
+
+                ((PrisonBreakCharacterAbstract)toAttack).hasKey = false;
             }
+            
         }
     }
 }

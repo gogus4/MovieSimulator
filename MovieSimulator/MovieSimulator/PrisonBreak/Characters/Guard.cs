@@ -12,7 +12,7 @@ using MovieSimulator.PrisonBreak.Characters.Team;
 
 namespace MovieSimulator.PrisonBreak.Characters
 {
-    public class Guard : Character
+    public class Guard : PrisonBreakCharacterAbstract
     {
         public Guard(int x, int y)
             : base(x, y)
@@ -27,7 +27,7 @@ namespace MovieSimulator.PrisonBreak.Characters
 
         public void Init()
         {
-            command = new CommandUpdateCharacter();
+            base.Init();
             strategyFight = new StrategyFightWithTruncheon();
             name = "Garde";
             team = new GuardTeam();

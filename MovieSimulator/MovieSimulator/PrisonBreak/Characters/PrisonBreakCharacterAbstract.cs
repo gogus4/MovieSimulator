@@ -3,32 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MovieSimulator.Common.BoardGame.Access;
+using MovieSimulator.PrisonBreak.Characters.Team;
 using MovieSimulator.PrisonBreak.Strategy;
-using MovieSimulator.Common.BoardGame.Area;
 using MovieSimulator.Common.BoardGame.Characters;
 using MovieSimulator.Common.BoardGame.Command;
-using MovieSimulator.PrisonBreak.Characters.Team;
 
 namespace MovieSimulator.PrisonBreak.Characters
 {
-    public class MichaelScofield : PrisonBreakCharacterAbstract
+    public abstract class PrisonBreakCharacterAbstract : Character
     {
-        public MichaelScofield(int x, int y)
+        public bool hasKey { get; set; }
+
+        public PrisonBreakCharacterAbstract(int x, int y)
             : base(x, y)
         {
             Init();
         }
 
-        public MichaelScofield()
+        public PrisonBreakCharacterAbstract()
         {
             Init();
         }
 
         public void Init()
         {
-            base.Init();
-            name = "Michael Scofield";
+            command = new CommandUpdateCharacter();
+            strategyFight = new StrategyFightWithFist();
+            team = new LincolnTeam();
+            hasKey = false;
         }
     }
 }
