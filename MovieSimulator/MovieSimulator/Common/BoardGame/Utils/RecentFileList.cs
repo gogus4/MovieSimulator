@@ -129,23 +129,6 @@ namespace MovieSimulator.Common.BoardGame.Utils
             return String.Format(format, index, filepath, shortPath);
         }
 
-        // This method is taken from Joe Woodbury's article at: http://www.codeproject.com/KB/cs/mrutoolstripmenu.aspx
-
-        /// <summary>
-        /// Shortens a pathname for display purposes.
-        /// </summary>
-        /// <param labelName="pathname">The pathname to shorten.</param>
-        /// <param labelName="maxLength">The maximum number of characters to be displayed.</param>
-        /// <remarks>Shortens a pathname by either removing consecutive components of a path
-        /// and/or by removing characters from the end of the filename and replacing
-        /// then with three elipses (...)
-        /// <para>In all cases, the root of the passed path will be preserved in it's entirety.</para>
-        /// <para>If a UNC path is used or the pathname and maxLength are particularly short,
-        /// the resulting path may be longer than maxLength.</para>
-        /// <para>This method expects fully resolved pathnames to be passed to it.
-        /// (Use Path.GetFullPath() to obtain this.)</para>
-        /// </remarks>
-        /// <returns></returns>
         static public string ShortenPathname(string pathname, int maxLength)
         {
             if (pathname.Length <= maxLength)
@@ -159,11 +142,10 @@ namespace MovieSimulator.Common.BoardGame.Utils
 
             int filenameIndex = elements.GetLength(0) - 1;
 
-            if (elements.GetLength(0) == 1) // pathname is just a root and filename
+            if (elements.GetLength(0) == 1) 
             {
-                if (elements[0].Length > 5) // long enough to shorten
+                if (elements[0].Length > 5) 
                 {
-                    // if path is a UNC path, root may be rather long
                     if (root.Length + 6 >= maxLength)
                     {
                         return root + elements[0].Substring(0, 3) + "...";
@@ -174,7 +156,7 @@ namespace MovieSimulator.Common.BoardGame.Utils
                     }
                 }
             }
-            else if ((root.Length + 4 + elements[filenameIndex].Length) > maxLength) // pathname is just a root and filename
+            else if ((root.Length + 4 + elements[filenameIndex].Length) > maxLength) 
             {
                 root += "...\\";
 
@@ -227,8 +209,6 @@ namespace MovieSimulator.Common.BoardGame.Utils
                     if (begin == 0 && end == filenameIndex)
                         break;
                 }
-
-                // assemble final string
 
                 for (int i = 0; i < begin; i++)
                 {

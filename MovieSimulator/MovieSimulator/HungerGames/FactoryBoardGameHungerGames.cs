@@ -64,10 +64,6 @@ namespace MovieSimulator.HungerGames
 
             FillBoardGame("XML/HungerGames.xml");
 
-            //CreateAreas();
-
-            //SaveBoardGame("toto");
-
             foreach (AreaAbstract area in boardGame.areas)
             {
                 setAccess(area);

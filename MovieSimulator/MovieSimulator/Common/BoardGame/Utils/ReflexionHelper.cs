@@ -10,6 +10,7 @@ namespace MovieSimulator.Common.BoardGame.Utils
     public class ReflexionHelper
     {
         private static ReflexionHelper _instance;
+
         public static ReflexionHelper Instance
         {
             get

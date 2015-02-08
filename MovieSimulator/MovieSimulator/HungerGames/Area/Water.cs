@@ -8,7 +8,6 @@ using System.Windows.Media;
 
 namespace MovieSimulator.HungerGames.Area
 {
-    // User can go but can not fight
     public class Water : AreaAbstract
     {
         public Water()

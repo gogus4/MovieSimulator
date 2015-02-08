@@ -16,6 +16,7 @@ namespace MovieSimulator.Common.BoardGame.Command
         }
 
         public abstract void UpdateAreaBoardGame(AreaAbstract area);
+
         public abstract void UpdateCharacterBoardGame(Character area);
 
     }

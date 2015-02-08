@@ -10,7 +10,6 @@ using MovieSimulator.Common.BoardGame.Composite;
 
 namespace MovieSimulator.Common.BoardGame.Area
 {
-    // Zone
     public abstract class AreaAbstract
     {
         public int x { get; set; }

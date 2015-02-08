@@ -13,6 +13,7 @@ namespace MovieSimulator.PrisonBreak.Area
         public Door()
         {
             Color = Brushes.Maroon;
+            isAccessible = false;
         }
     }
 }

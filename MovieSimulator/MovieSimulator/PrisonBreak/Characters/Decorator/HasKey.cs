@@ -11,7 +11,7 @@ namespace MovieSimulator.PrisonBreak.Characters.Decorator
     {
         public override string DoMyReport()
         {
-            return base.DoMyReport() + ", j'ai eu une clef en tuant un garde";
+            return base.DoMyReport() + ", j'ai eu la clef en volant un garde";
         }
     }
 }

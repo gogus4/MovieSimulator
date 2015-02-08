@@ -112,7 +112,6 @@ namespace MovieSimulator.Common.BoardGame.Characters
                         }
 
                         area.UpdateGraphic();
-                        //command.UpdateCharacterBoardGame(this);
                     }
                 }
             }
@@ -151,7 +150,6 @@ namespace MovieSimulator.Common.BoardGame.Characters
                 if (this.strategyFight.Degats() < fromAttack.strategyFight.Degats())
                     this.strategyFight = fromAttack.strategyFight;
 
-                //GamingEnvironment.Instance.boardGame.characters.Remove(this);
                 GamingEnvironment.Instance.boardGame.areas.Where(x => x.x == this.x && x.y == this.y).FirstOrDefault().UpdateGraphic();
             }
         }

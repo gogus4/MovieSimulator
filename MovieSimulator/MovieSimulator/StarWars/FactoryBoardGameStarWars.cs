@@ -35,16 +35,7 @@ namespace MovieSimulator.StarWars
                     {
                         boardGame.AddArea(new Asteroid() { x = i, y = j });
                     }
-                    /*   
-                    else if (rd == 2 || rd == 3)
-                    {
-                        Potion potion = new Potion("Potion de fruit");
-                        potion.Add(new Pomme());
-                        potion.Add(new Poire());
 
-                        boardGame.AddArea(new Water() { x = i, y = j, item = potion });
-                    }
-                    */
                     else if (rd > 3 && rd < 6)
                         boardGame.AddArea(new AsteroidChamp() { x = i, y = j });
                     
@@ -58,12 +49,7 @@ namespace MovieSimulator.StarWars
         {
             boardGame = new BoardGameStarWars(size);
 
-            //LoadBoardGame("HungerGames_23.01.2015.xml");
-
             FillBoardGame("XML/StarWars.xml");
-            //CreateAreas();
-
-            // SaveBoardGame("toto");
 
             foreach (AreaAbstract area in boardGame.areas)
             {

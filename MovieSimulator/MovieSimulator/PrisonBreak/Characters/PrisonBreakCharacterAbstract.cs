@@ -28,7 +28,7 @@ namespace MovieSimulator.PrisonBreak.Characters
         public void Init()
         {
             command = new CommandUpdateCharacter();
-            strategyFight = new StrategyFightWithFist();
+            strategyFight = new StrategyFightForTheKey();
             team = new LincolnTeam();
             hasKey = false;
         }

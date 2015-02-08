@@ -35,16 +35,7 @@ namespace MovieSimulator.PrisonBreak
                     {
                         boardGame.AddArea(new Wall() { x = i, y = j });
                     }
-                    /*   
-                    else if (rd == 2 || rd == 3)
-                    {
-                        Potion potion = new Potion("Potion de fruit");
-                        potion.Add(new Pomme());
-                        potion.Add(new Poire());
 
-                        boardGame.AddArea(new Water() { x = i, y = j, item = potion });
-                    }
-                    */
                     else if (rd == 4)
                         boardGame.AddArea(new Door() { x = i, y = j });
 
@@ -58,13 +49,7 @@ namespace MovieSimulator.PrisonBreak
         {
             boardGame = new BoardGamePrisonBreak(size);
 
-            //LoadBoardGame("HungerGames_23.01.2015.xml");
-
             FillBoardGame("XML/PrisonBreak.xml");
-
-            // CreateAreas();
-
-            // SaveBoardGame("toto");
 
             foreach (AreaAbstract area in boardGame.areas)
             {

@@ -9,6 +9,7 @@ namespace MovieSimulator.Common.BoardGame.Strategy
     public abstract class StrategyFight
     {
         public abstract int Degats();
+
         public abstract int Range();
     }
 }
