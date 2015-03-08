@@ -9,6 +9,7 @@ using System.Xml.Linq;
 using MovieSimulator.Common.BoardGame.Area;
 using MovieSimulator.Common.BoardGame.Utils;
 using MovieSimulator.Common.BoardGame.Characters;
+using MovieSimulator.Common.BoardGame.Composite;
 
 namespace MovieSimulator.Common.BoardGame.Factory
 {
@@ -31,6 +32,7 @@ namespace MovieSimulator.Common.BoardGame.Factory
 
             string nameSimulation = Configuration.Instance.CurrentSimulator;
             AreaAbstract o;
+            CompositeHealAbstract potion;
 
             foreach (XElement area in areas)
             {
@@ -42,6 +44,12 @@ namespace MovieSimulator.Common.BoardGame.Factory
 
                 o.x = int.Parse(area.Attribute("x").Value);
                 o.y = int.Parse(area.Attribute("y").Value);
+
+                if (area.Attribute("potion") != null)
+                {
+                    potion = (CompositeHealAbstract)ReflexionHelper.Instance.GetInstance(Assembly.GetExecutingAssembly(), nameSimulation, area.Attribute("potion").Value, "Composite");
+                    o.SetItem(potion);
+                }
 
                 boardGame.AddArea(o);
             }

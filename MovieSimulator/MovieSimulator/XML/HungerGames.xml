@@ -39,7 +39,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="1" y="5" type="Grass" />
     <area x="1" y="6" type="Grass" />
     <area x="1" y="7" type="Grass" />
-    <area x="1" y="8" type="Grass" />
+    <area x="1" y="8" type="Grass" potion="Pomme" />
     <area x="1" y="9" type="Grass" />
     <area x="1" y="10" type="Grass" />
     <area x="1" y="11" type="Grass" />
@@ -59,7 +59,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="2" y="5" type="Grass" />
     <area x="2" y="6" type="Grass" />
     <area x="2" y="7" type="Grass" />
-    <area x="2" y="8" type="Grass" />
+    <area x="2" y="8" type="Grass" potion="Pomme" />
     <area x="2" y="9" type="Grass" />
     <area x="2" y="10" type="Grass" />
     <area x="2" y="11" type="Grass" />
@@ -74,7 +74,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="3" y="0" type="Wall" />
     <area x="3" y="1" type="Square" />
     <area x="3" y="2" type="Square" />
-    <area x="3" y="3" type="Square" />
+    <area x="3" y="3" type="Square" potion="Pomme" />
     <area x="3" y="4" type="Grass" />
     <area x="3" y="5" type="Grass" />
     <area x="3" y="6" type="Grass" />
@@ -95,7 +95,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="4" y="1" type="Rock" />
     <area x="4" y="2" type="Rock" />
     <area x="4" y="3" type="Rock" />
-    <area x="4" y="4" type="Grass" />
+    <area x="4" y="4" type="Grass" potion="Pomme" />
     <area x="4" y="5" type="Grass" />
     <area x="4" y="6" type="Grass" />
     <area x="4" y="7" type="Grass" />
@@ -117,7 +117,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="5" y="3" type="Grass" />
     <area x="5" y="4" type="Grass" />
     <area x="5" y="5" type="Grass" />
-    <area x="5" y="6" type="Grass" />
+    <area x="5" y="6" type="Grass" potion="Pomme" />
     <area x="5" y="7" type="Grass" />
     <area x="5" y="8" type="Grass" />
     <area x="5" y="9" type="Grass" />
@@ -132,7 +132,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="5" y="18" type="Grass" />
     <area x="5" y="19" type="Wall" />
     <area x="6" y="0" type="Wall" />
-    <area x="6" y="1" type="Grass" />
+    <area x="6" y="1" type="Grass" potion="Poire" />
     <area x="6" y="2" type="Grass" />
     <area x="6" y="3" type="Grass" />
     <area x="6" y="4" type="Grass" />
@@ -144,7 +144,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="6" y="10" type="Rock" />
     <area x="6" y="11" type="Grass" />
     <area x="6" y="12" type="Grass" />
-    <area x="6" y="13" type="Grass" />
+    <area x="6" y="13" type="Grass" potion="Pomme" />
     <area x="6" y="14" type="Grass" />
     <area x="6" y="15" type="Rock" />
     <area x="6" y="16" type="Grass" />
@@ -163,7 +163,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="7" y="9" type="Water" />
     <area x="7" y="10" type="Water" />
     <area x="7" y="11" type="Water" />
-    <area x="7" y="12" type="Water" />
+    <area x="7" y="12" type="Water" potion="Pomme" />
     <area x="7" y="13" type="Grass" />
     <area x="7" y="14" type="Grass" />
     <area x="7" y="15" type="Grass" />
@@ -195,7 +195,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="9" y="1" type="Grass" />
     <area x="9" y="2" type="Grass" />
     <area x="9" y="3" type="Grass" />
-    <area x="9" y="4" type="Grass" />
+    <area x="9" y="4" type="Grass" potion="Pomme" />
     <area x="9" y="5" type="Grass" />
     <area x="9" y="6" type="Grass" />
     <area x="9" y="7" type="Water" />
@@ -207,7 +207,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="9" y="13" type="Grass" />
     <area x="9" y="14" type="Grass" />
     <area x="9" y="15" type="Grass" />
-    <area x="9" y="16" type="Grass" />
+    <area x="9" y="16" type="Grass" potion="Poire" />
     <area x="9" y="17" type="Grass" />
     <area x="9" y="18" type="Grass" />
     <area x="9" y="19" type="Wall" />
@@ -218,7 +218,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="10" y="4" type="Grass" />
     <area x="10" y="5" type="Grass" />
     <area x="10" y="6" type="Grass" />
-    <area x="10" y="7" type="Water" />
+    <area x="10" y="7" type="Water" potion="Pomme" />
     <area x="10" y="8" type="Water" />
     <area x="10" y="9" type="Square" />
     <area x="10" y="10" type="Square" />
@@ -236,7 +236,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="11" y="2" type="Grass" />
     <area x="11" y="3" type="Grass" />
     <area x="11" y="4" type="Grass" />
-    <area x="11" y="5" type="Grass" />
+    <area x="11" y="5" type="Grass" potion="Poire" />
     <area x="11" y="6" type="Grass" />
     <area x="11" y="7" type="Water" />
     <area x="11" y="8" type="Water" />
@@ -252,7 +252,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="11" y="18" type="Grass" />
     <area x="11" y="19" type="Wall" />
     <area x="12" y="0" type="Wall" />
-    <area x="12" y="1" type="Grass" />
+    <area x="12" y="1" type="Grass" potion="Pomme" />
     <area x="12" y="2" type="Grass" />
     <area x="12" y="3" type="Rock" />
     <area x="12" y="4" type="Grass" />
@@ -279,7 +279,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="13" y="5" type="Grass" />
     <area x="13" y="6" type="Grass" />
     <area x="13" y="7" type="Grass" />
-    <area x="13" y="8" type="Grass" />
+    <area x="13" y="8" type="Grass" potion="Poire" />
     <area x="13" y="9" type="Grass" />
     <area x="13" y="10" type="Grass" />
     <area x="13" y="11" type="Grass" />
@@ -294,7 +294,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="14" y="0" type="Wall" />
     <area x="14" y="1" type="Grass" />
     <area x="14" y="2" type="Grass" />
-    <area x="14" y="3" type="Grass" />
+    <area x="14" y="3" type="Grass" potion="Pomme" />
     <area x="14" y="4" type="Grass" />
     <area x="14" y="5" type="Grass" />
     <area x="14" y="6" type="Grass" />
@@ -307,7 +307,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="14" y="13" type="Grass" />
     <area x="14" y="14" type="Grass" />
     <area x="14" y="15" type="Grass" />
-    <area x="14" y="16" type="Grass" />
+    <area x="14" y="16" type="Grass" potion="Poire" />
     <area x="14" y="17" type="Grass" />
     <area x="14" y="18" type="Grass" />
     <area x="14" y="19" type="Wall" />
@@ -324,7 +324,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="15" y="10" type="Rock" />
     <area x="15" y="11" type="Grass" />
     <area x="15" y="12" type="Grass" />
-    <area x="15" y="13" type="Grass" />
+    <area x="15" y="13" type="Grass" potion="Pomme" />
     <area x="15" y="14" type="Grass" />
     <area x="15" y="15" type="Grass" />
     <area x="15" y="16" type="Rock" />
@@ -336,7 +336,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="16" y="2" type="Square" />
     <area x="16" y="3" type="Square" />
     <area x="16" y="4" type="Grass" />
-    <area x="16" y="5" type="Grass" />
+    <area x="16" y="5" type="Grass" potion="Poire" />
     <area x="16" y="6" type="Grass" />
     <area x="16" y="7" type="Grass" />
     <area x="16" y="8" type="Grass" />
@@ -358,7 +358,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="17" y="4" type="Grass" />
     <area x="17" y="5" type="Grass" />
     <area x="17" y="6" type="Grass" />
-    <area x="17" y="7" type="Grass" />
+    <area x="17" y="7" type="Grass" potion="Pomme" />
     <area x="17" y="8" type="Grass" />
     <area x="17" y="9" type="Grass" />
     <area x="17" y="10" type="Grass" />
@@ -375,7 +375,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="18" y="1" type="Square" />
     <area x="18" y="2" type="Rock" />
     <area x="18" y="3" type="Grass" />
-    <area x="18" y="4" type="Grass" />
+    <area x="18" y="4" type="Grass" potion="Poire" />
     <area x="18" y="5" type="Grass" />
     <area x="18" y="6" type="Grass" />
     <area x="18" y="7" type="Grass" />
@@ -384,7 +384,7 @@ Square : Gris claire : Le personnage peut y accéder
     <area x="18" y="10" type="Grass" />
     <area x="18" y="11" type="Grass" />
     <area x="18" y="12" type="Grass" />
-    <area x="18" y="13" type="Grass" />
+    <area x="18" y="13" type="Grass" potion="Pomme" />
     <area x="18" y="14" type="Grass" />
     <area x="18" y="15" type="Grass" />
     <area x="18" y="16" type="Grass" />
